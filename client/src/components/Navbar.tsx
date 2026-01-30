@@ -8,8 +8,8 @@ export function Navbar() {
   const [location] = useLocation();
 
   const links = [
-    { href: "/capabilities", label: "About Us" },
-    { href: "/services", label: "Capabilities" },
+    { href: "/capabilities", label: "Capabilities" },
+    { href: "/services", label: "Services" },
     { href: "/contact", label: "Contact Us" },
   ];
 
