@@ -16,11 +16,13 @@ function Router() {
   const [location] = useLocation();
   const isHomePage = location === "/";
   const isServicePage = location.startsWith("/services/");
+  const isCapabilitiesPage = location === "/capabilities";
+  const isFullScreenPage = isHomePage || isServicePage || isCapabilitiesPage;
 
   return (
     <div className="flex flex-col min-h-screen">
-      {isHomePage ? <Navbar /> : isServicePage ? null : <NavbarSolid />}
-      <main className={isHomePage || isServicePage ? "" : "flex-grow"}>
+      {isHomePage ? <Navbar /> : isFullScreenPage ? null : <NavbarSolid />}
+      <main className={isFullScreenPage ? "" : "flex-grow"}>
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/capabilities" component={Capabilities} />
@@ -30,7 +32,7 @@ function Router() {
           <Route component={NotFound} />
         </Switch>
       </main>
-      {!isHomePage && !isServicePage && <Footer />}
+      {!isFullScreenPage && <Footer />}
     </div>
   );
 }
