@@ -18,7 +18,8 @@ function Router() {
   const isServiceDetailPage = location.startsWith("/services/") && location !== "/services";
   const isServicesPage = location === "/services";
   const isCapabilitiesPage = location === "/capabilities";
-  const isFullScreenPage = isHomePage || isServiceDetailPage || isServicesPage || isCapabilitiesPage;
+  const isContactPage = location === "/contact";
+  const isFullScreenPage = isHomePage || isServiceDetailPage || isServicesPage || isCapabilitiesPage || isContactPage;
 
   return (
     <div className="flex flex-col min-h-screen">

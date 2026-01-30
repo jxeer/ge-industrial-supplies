@@ -1,9 +1,10 @@
+import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insertContactSchema, type InsertContactSubmission } from "@shared/schema";
 import { useSubmitContact } from "@/hooks/use-contact";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, MapPin, Loader2, Send } from "lucide-react";
+import { Loader2 } from "lucide-react";
 import { 
   Form, FormControl, FormField, FormItem, FormLabel, FormMessage 
 } from "@/components/ui/form";
@@ -45,176 +46,199 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50">
-      <div className="bg-primary pb-32 pt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          <h1 className="text-4xl md:text-5xl font-display font-bold mb-4">Contact Us</h1>
-          <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto">
-            Get in touch with our team for quotes, service inquiries, or partnership opportunities.
-          </p>
-        </div>
+    <div className="relative min-h-screen bg-slate-900 overflow-hidden">
+      {/* Background Image - Capitol Building */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1501466044931-62695aada8e9?q=80&w=2000&auto=format&fit=crop" 
+          alt="Capitol Building"
+          className="w-full h-full object-cover opacity-30"
+        />
+        <div className="absolute inset-0 bg-black/60" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20 pb-20">
-        <div className="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row">
+      {/* Content */}
+      <div className="relative z-10 min-h-screen flex flex-col items-center px-6 py-16 md:py-24">
+        <div className="max-w-5xl w-full">
           
-          {/* Contact Info Sidebar */}
-          <div className="bg-slate-900 text-white p-10 md:w-1/3 flex flex-col justify-between relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none" />
+          {/* Main Title */}
+          <motion.h1
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-12 tracking-tight"
+          >
+            CONTACT US
+          </motion.h1>
+
+          {/* Two Column Layout */}
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-16 mb-16">
             
-            <div className="relative z-10">
-              <h3 className="text-2xl font-bold font-display mb-8">Contact Information</h3>
+            {/* Left Column - Contact Info */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <h2 className="text-lg font-bold text-white mb-6 tracking-wide">CONTACT INFORMATION</h2>
+              <div className="space-y-4 text-white/90 text-sm leading-relaxed">
+                <div>
+                  <p className="text-white/60 text-xs uppercase tracking-wider mb-1">Headquarters</p>
+                  <p>857 Pendale Rd.</p>
+                  <p>El Paso, TX 79907</p>
+                </div>
+                <div>
+                  <p className="text-white/60 text-xs uppercase tracking-wider mb-1">Primary Contact</p>
+                  <p>Melissa Tate</p>
+                  <p>mtate@gbs-web.com</p>
+                </div>
+                <div>
+                  <p className="text-white/60 text-xs uppercase tracking-wider mb-1">SBA Status</p>
+                  <p>HUBZone Certified</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Right Column - Contact Form */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <h2 className="text-lg font-bold text-white mb-6 tracking-wide">SEND A MESSAGE</h2>
               
-              <div className="space-y-8">
-                <div className="flex items-start gap-4">
-                  <MapPin className="w-6 h-6 text-primary mt-1" />
-                  <div>
-                    <h4 className="font-bold text-sm text-slate-400 uppercase tracking-wider mb-1">Headquarters</h4>
-                    <p className="text-lg">
-                      857 Pendale Rd.<br />
-                      El Paso, TX 79907
-                    </p>
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                  <div className="grid grid-cols-2 gap-4">
+                    <FormField
+                      control={form.control}
+                      name="name"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-white/80 text-xs">Name</FormLabel>
+                          <FormControl>
+                            <Input 
+                              placeholder="Your name" 
+                              className="bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:bg-white/15 focus:border-white/40" 
+                              data-testid="input-name"
+                              {...field} 
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="company"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-white/80 text-xs">Company</FormLabel>
+                          <FormControl>
+                            <Input 
+                              placeholder="Company name" 
+                              className="bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:bg-white/15 focus:border-white/40" 
+                              data-testid="input-company"
+                              {...field} 
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
                   </div>
-                </div>
 
-                <div className="flex items-start gap-4">
-                  <Mail className="w-6 h-6 text-primary mt-1" />
-                  <div>
-                    <h4 className="font-bold text-sm text-slate-400 uppercase tracking-wider mb-1">Email</h4>
-                    <a href="mailto:mtate@gbs-web.com" className="text-lg hover:text-primary transition-colors">
-                      mtate@gbs-web.com
-                    </a>
-                    <p className="text-sm text-slate-500 mt-1">Attn: Melissa Tate</p>
+                  <div className="grid grid-cols-2 gap-4">
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-white/80 text-xs">Email</FormLabel>
+                          <FormControl>
+                            <Input 
+                              type="email" 
+                              placeholder="you@company.com" 
+                              className="bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:bg-white/15 focus:border-white/40" 
+                              data-testid="input-email"
+                              {...field} 
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="phone"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-white/80 text-xs">Phone</FormLabel>
+                          <FormControl>
+                            <Input 
+                              type="tel" 
+                              placeholder="+1 (555) 000-0000" 
+                              className="bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:bg-white/15 focus:border-white/40" 
+                              data-testid="input-phone"
+                              {...field} 
+                              value={field.value || ''} 
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
                   </div>
-                </div>
 
-                <div className="flex items-start gap-4">
-                  <Phone className="w-6 h-6 text-primary mt-1" />
-                  <div>
-                    <h4 className="font-bold text-sm text-slate-400 uppercase tracking-wider mb-1">Phone</h4>
-                    <p className="text-lg">Call for Quote</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative z-10 mt-12 pt-12 border-t border-white/10">
-              <h4 className="font-bold text-sm text-slate-400 uppercase tracking-wider mb-4">Company Identifiers</h4>
-              <div className="grid grid-cols-2 gap-4 text-sm">
-                <div>
-                  <span className="block text-slate-500 text-xs">CAGE Code</span>
-                  <span className="font-mono font-bold">711V1</span>
-                </div>
-                <div>
-                  <span className="block text-slate-500 text-xs">UEI</span>
-                  <span className="font-mono font-bold">G8CXJ2PMKN76</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Form Area */}
-          <div className="p-10 md:w-2/3 bg-white">
-            <h3 className="text-2xl font-bold font-display text-slate-900 mb-6">Send us a Message</h3>
-            
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
                   <FormField
                     control={form.control}
-                    name="name"
+                    name="message"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Full Name</FormLabel>
+                        <FormLabel className="text-white/80 text-xs">Message</FormLabel>
                         <FormControl>
-                          <Input placeholder="John Doe" className="bg-slate-50 border-slate-200 focus:bg-white" {...field} />
+                          <Textarea 
+                            placeholder="Tell us about your project requirements..." 
+                            className="min-h-[120px] bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:bg-white/15 focus:border-white/40 resize-none" 
+                            data-testid="input-message"
+                            {...field} 
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
                     )}
                   />
-                  <FormField
-                    control={form.control}
-                    name="company"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Company / Organization</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Company Name" className="bg-slate-50 border-slate-200 focus:bg-white" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Email Address</FormLabel>
-                        <FormControl>
-                          <Input type="email" placeholder="john@company.com" className="bg-slate-50 border-slate-200 focus:bg-white" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="phone"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Phone Number</FormLabel>
-                        <FormControl>
-                          <Input type="tel" placeholder="+1 (555) 000-0000" className="bg-slate-50 border-slate-200 focus:bg-white" {...field} value={field.value || ''} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Message</FormLabel>
-                      <FormControl>
-                        <Textarea 
-                          placeholder="Tell us about your project requirements..." 
-                          className="min-h-[150px] bg-slate-50 border-slate-200 focus:bg-white resize-none" 
-                          {...field} 
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <div className="flex justify-end">
                   <button
                     type="submit"
                     disabled={submitMutation.isPending}
-                    className="px-8 py-3 bg-primary text-white rounded-lg font-bold shadow-lg hover:shadow-xl hover:bg-primary/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                    className="w-full mt-4 px-8 py-3 border-2 border-white text-white font-semibold text-sm tracking-wider hover:bg-white hover:text-black transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                    data-testid="button-submit-contact"
                   >
                     {submitMutation.isPending ? (
                       <>
-                        <Loader2 className="w-5 h-5 animate-spin" /> Sending...
+                        <Loader2 className="w-4 h-4 animate-spin" /> SENDING...
                       </>
                     ) : (
-                      <>
-                        Send Message <Send className="w-4 h-4" />
-                      </>
+                      "SEND MESSAGE"
                     )}
                   </button>
-                </div>
-              </form>
-            </Form>
+                </form>
+              </Form>
+            </motion.div>
           </div>
+
+          {/* Bottom Info */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex flex-col items-center"
+          >
+            <p className="text-white/80 text-sm tracking-wide">
+              CAGE Code: 711V1  UEI: G8CXJ2PMKN76
+            </p>
+          </motion.div>
         </div>
       </div>
     </div>
