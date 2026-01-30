@@ -5,32 +5,32 @@ const services = [
   { 
     title: "Facility\nMaintenance",
     image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=800&auto=format&fit=crop",
-    href: "/services#facility"
+    href: "/services/facility-maintenance"
   },
   { 
     title: "Global\nLogistics",
     image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=800&auto=format&fit=crop",
-    href: "/services#logistics"
+    href: "/services/global-logistics"
   },
   { 
     title: "Environmental\nManagement",
     image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=800&auto=format&fit=crop",
-    href: "/services#environmental"
+    href: "/services/environmental-management"
   },
   { 
     title: "Construction\nServices",
     image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800&auto=format&fit=crop",
-    href: "/services#construction"
+    href: "/services/construction-services"
   },
   { 
     title: "Specialized\nEquipment",
     image: "https://images.unsplash.com/photo-1580901369227-308f6f40bdeb?q=80&w=800&auto=format&fit=crop",
-    href: "/services#equipment"
+    href: "/services/specialized-equipment"
   },
   { 
     title: "Professional\nSolutions",
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop",
-    href: "/services#professional"
+    href: "/services/professional-solutions"
   },
 ];
 

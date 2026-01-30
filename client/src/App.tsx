@@ -9,25 +9,28 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import Capabilities from "@/pages/Capabilities";
 import Services from "@/pages/Services";
+import ServicePage from "@/pages/ServicePage";
 import Contact from "@/pages/Contact";
 
 function Router() {
   const [location] = useLocation();
   const isHomePage = location === "/";
+  const isServicePage = location.startsWith("/services/");
 
   return (
     <div className="flex flex-col min-h-screen">
-      {isHomePage ? <Navbar /> : <NavbarSolid />}
-      <main className={isHomePage ? "" : "flex-grow"}>
+      {isHomePage ? <Navbar /> : isServicePage ? null : <NavbarSolid />}
+      <main className={isHomePage || isServicePage ? "" : "flex-grow"}>
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/capabilities" component={Capabilities} />
           <Route path="/services" component={Services} />
+          <Route path="/services/:serviceId" component={ServicePage} />
           <Route path="/contact" component={Contact} />
           <Route component={NotFound} />
         </Switch>
       </main>
-      {!isHomePage && <Footer />}
+      {!isHomePage && !isServicePage && <Footer />}
     </div>
   );
 }
