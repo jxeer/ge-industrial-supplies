@@ -1,134 +1,207 @@
 import { motion } from "framer-motion";
-import { Check, Shield, FileText, Globe } from "lucide-react";
+import { FileText, Users, Building, Globe } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Capabilities() {
-  const clients = [
-    "Department of Defense", "US State Department", "US Air Force", "NATO",
-    "Lockheed Martin", "Raytheon", "Boeing", "General Dynamics"
-  ];
-
   const naicsCodes = [
     { code: "561210", desc: "Facilities Support Services" },
-    { code: "423840", desc: "Industrial Supplies Wholesalers" },
-    { code: "236220", desc: "Commercial Building Construction" },
-    { code: "562910", desc: "Remediation Services" },
-    { code: "541611", desc: "Admin Mgmt Consulting" },
-    { code: "532490", desc: "Other Industrial Machinery Rental" }
+    { code: "423840", desc: "Industrial Supplies Merchant Wholesalers" },
+    { code: "423440", desc: "Commercial Equipment and Supplies Wholesalers" },
+    { code: "423720", desc: "Plumbing and Heating Equipment Wholesalers" },
+    { code: "423830", desc: "Industrial Machinery and Equipment Wholesalers" },
+    { code: "532112", desc: "Passenger Car Leasing" },
+    { code: "812320", desc: "Laundry Service" },
+    { code: "541330", desc: "Engineering Services" },
+    { code: "562119", desc: "Other Waste Collection" },
+    { code: "562211", desc: "Hazardous Waste Treatment and Disposal" },
+    { code: "238990", desc: "Predictive Maintenance Service" }
+  ];
+
+  const clients = [
+    "U.S. Department of Defense (DoD)",
+    "U.S. Department of State (DOS)",
+    "U.S. Air Force",
+    "NATO Allied Command",
+    "Ministry of Defense - Government of India",
+    "Department of Homeland Security (DHS)",
+    "CARE, Doha, Qatar (ISO 9001)"
+  ];
+
+  const partners = [
+    "Lockheed Martin (Subcontractor)",
+    "Raytheon Technologies (Subcontractor)",
+    "Northrop Grumman (Technical Support Partner)",
+    "Boeing Defense, Space & Security",
+    "General Dynamics"
   ];
 
   return (
     <div className="min-h-screen bg-slate-50">
-      {/* Header */}
-      <section className="bg-slate-900 text-white py-24 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      {/* Header Section - Like PDF */}
+      <section className="bg-slate-900 text-white py-16">
+        <div className="max-w-6xl mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">Our Capabilities</h1>
-            <p className="text-xl text-slate-300 max-w-3xl">
-              Proven performance in high-stakes environments. We deliver mission-critical support services globally with precision and reliability.
-            </p>
+            <h1 className="text-4xl md:text-5xl font-display font-bold mb-4">CAPABILITIES STATEMENT</h1>
           </motion.div>
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 -mt-12 relative z-20">
-        <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-slate-100">
+      {/* Main Content - Two Column Layout like PDF */}
+      <div className="max-w-6xl mx-auto px-4 py-12">
+        <div className="grid md:grid-cols-2 gap-12">
           
-          {/* About Section */}
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-            <div>
-              <h2 className="text-3xl font-display font-bold text-slate-900 mb-6">Company Overview</h2>
-              <div className="space-y-4 text-slate-600 leading-relaxed">
-                <p>
-                  Founded in 1989, G&E Industrial Supplies, Inc. is a HUBZone-certified small business headquartered in El Paso, Texas. We have established ourselves as a trusted partner for federal government agencies and private-sector clients worldwide.
-                </p>
-                <p>
-                  With over 40+ task orders executed under LOGCAP and extensive experience in the Middle East, we bring a deep understanding of logistical complexities in austere environments. Our operations are fully JCCS approved and ISO 9001 compliant.
-                </p>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-primary/5 p-6 rounded-xl text-center">
-                <h3 className="text-4xl font-black text-primary mb-2">30+</h3>
-                <p className="text-sm font-bold text-slate-600">Years Experience</p>
-              </div>
-              <div className="bg-primary/5 p-6 rounded-xl text-center">
-                <h3 className="text-4xl font-black text-primary mb-2">40+</h3>
-                <p className="text-sm font-bold text-slate-600">Task Orders</p>
-              </div>
-              <div className="col-span-2 bg-slate-900 text-white p-6 rounded-xl flex items-center justify-between">
-                <div>
-                  <h3 className="font-bold text-lg">Bonding Capacity</h3>
-                  <p className="text-slate-400 text-sm">Aggregate Capacity</p>
+          {/* Left Column - Company Data */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <div className="bg-white p-8 rounded-lg border border-slate-200 mb-8">
+              <h2 className="text-lg font-display font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <Building className="w-5 h-5 text-primary" />
+                COMPANY DATA
+              </h2>
+              <div className="space-y-3 text-sm">
+                <div className="flex justify-between border-b border-slate-100 pb-2">
+                  <span className="text-slate-500">Company:</span>
+                  <span className="font-semibold text-slate-800">G&E Industrial Supplies, Inc.</span>
                 </div>
-                <span className="text-3xl font-display font-bold text-accent">$100M</span>
+                <div className="flex justify-between border-b border-slate-100 pb-2">
+                  <span className="text-slate-500">Corporation Type:</span>
+                  <span className="font-semibold text-slate-800">Corp</span>
+                </div>
+                <div className="flex justify-between border-b border-slate-100 pb-2">
+                  <span className="text-slate-500">SBA Status:</span>
+                  <span className="font-semibold text-slate-800">HUBZone</span>
+                </div>
+                <div className="flex justify-between border-b border-slate-100 pb-2">
+                  <span className="text-slate-500">Primary Contact:</span>
+                  <span className="font-semibold text-slate-800">Melissa Tate</span>
+                </div>
+                <div className="flex justify-between border-b border-slate-100 pb-2">
+                  <span className="text-slate-500">Email:</span>
+                  <span className="font-semibold text-slate-800">mtate@gbs-web.com</span>
+                </div>
+                <div className="pt-2">
+                  <span className="text-slate-500 block mb-1">Headquarters:</span>
+                  <span className="font-semibold text-slate-800">857 Pendale Rd. El Paso, TX 79907</span>
+                </div>
+                <div className="pt-2 text-primary font-semibold">
+                  40+ task orders executed under LOGCAP
+                </div>
+                <div className="pt-1">
+                  <span className="text-slate-500">Middle East Location:</span>
+                  <span className="font-semibold text-slate-800 ml-2">Qatar</span>
+                </div>
               </div>
             </div>
-          </div>
 
-          <hr className="border-slate-100 my-16" />
-
-          {/* Codes & Certs */}
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <FileText className="w-6 h-6 text-primary" />
-                <h3 className="text-2xl font-display font-bold text-slate-900">NAICS Codes</h3>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {/* NAICS Codes */}
+            <div className="bg-white p-8 rounded-lg border border-slate-200">
+              <h2 className="text-lg font-display font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <FileText className="w-5 h-5 text-primary" />
+                NAICS CODES
+              </h2>
+              <div className="space-y-2">
                 {naicsCodes.map((item) => (
-                  <div key={item.code} className="flex items-center gap-3 p-3 bg-slate-50 rounded-lg border border-slate-100">
-                    <span className="font-mono font-bold text-primary bg-white px-2 py-1 rounded shadow-sm text-sm">{item.code}</span>
-                    <span className="text-xs font-medium text-slate-700 truncate" title={item.desc}>{item.desc}</span>
+                  <div key={item.code} className="flex gap-3 text-sm">
+                    <span className="font-mono font-bold text-primary w-16">{item.code}</span>
+                    <span className="text-slate-600">- {item.desc}</span>
                   </div>
                 ))}
               </div>
             </div>
+          </motion.div>
 
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <Shield className="w-6 h-6 text-primary" />
-                <h3 className="text-2xl font-display font-bold text-slate-900">Past Performance</h3>
-              </div>
-              <div className="bg-slate-50 rounded-xl p-6 border border-slate-100">
-                <p className="text-sm text-slate-500 mb-4 font-semibold uppercase tracking-wider">Trusted by major organizations</p>
-                <div className="flex flex-wrap gap-3">
-                  {clients.map(client => (
-                    <span key={client} className="px-3 py-1.5 bg-white text-slate-700 rounded-full text-sm font-medium border border-slate-200 shadow-sm">
-                      {client}
-                    </span>
-                  ))}
-                </div>
+          {/* Right Column - Corporate Summary */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <div className="bg-white p-8 rounded-lg border border-slate-200 mb-8">
+              <h2 className="text-lg font-display font-bold text-slate-900 mb-6">CORPORATE SUMMARY</h2>
+              <div className="space-y-4 text-slate-600 leading-relaxed text-sm">
+                <p>
+                  Founded in 1989, G&E Industrial Supplies, Inc. is a HUBZone-certified small business headquartered in El Paso, Texas, serving federal government and private-sector clients across the U.S. and abroad.
+                </p>
+                <p>
+                  We specialize in providing facility support services, custodial services, mechanical, and environmental supply and service solutions—from heavy equipment and facility maintenance to waste management and overseas support under JCCS approval for the Middle East.
+                </p>
+                <p>
+                  With a long-standing reputation for reliability and responsive service, G&E delivers turnkey support solutions that enhance operational readiness, compliance, and efficiency for federal, state, and local agencies.
+                </p>
               </div>
             </div>
-          </div>
-          
-          <hr className="border-slate-100 my-16" />
 
-          {/* Global Footprint */}
-          <div className="text-center">
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <Globe className="w-8 h-8 text-primary" />
-              <h3 className="text-3xl font-display font-bold text-slate-900">Global Footprint</h3>
+            {/* Experience & Clients */}
+            <div className="bg-white p-8 rounded-lg border border-slate-200 mb-8">
+              <h2 className="text-lg font-display font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <Globe className="w-5 h-5 text-primary" />
+                EXPERIENCE AND CLIENT PORTFOLIO
+              </h2>
+              <p className="text-sm text-slate-600 mb-4">
+                G&E's experience spans defense, construction, facility support, custodial service, and disaster response sectors, demonstrating a strong regional and global presence.
+              </p>
+              <p className="text-sm text-slate-600 mb-6">
+                The company has a solid track record in O&M, custodial service, construction, and defense sectors, including IDIQ Global and Qatar projects.
+              </p>
+              
+              <h3 className="text-sm font-bold text-slate-800 mb-3">GOVERNMENT & DEFENSE CLIENTS:</h3>
+              <ul className="space-y-1 text-sm text-slate-600 mb-6">
+                {clients.map((client, idx) => (
+                  <li key={idx} className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    {client}
+                  </li>
+                ))}
+              </ul>
+
+              <h3 className="text-sm font-bold text-slate-800 mb-3">EXPERIENCE:</h3>
+              <ul className="space-y-1 text-sm text-slate-600">
+                {partners.map((partner, idx) => (
+                  <li key={idx} className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
+                    {partner}
+                  </li>
+                ))}
+              </ul>
             </div>
-            <p className="text-slate-600 mb-10 max-w-2xl mx-auto">
-              Our operations span critical strategic locations, providing reliable supply chains and on-ground support where it matters most.
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              {['United States & Mexico', 'Middle East (Qatar, Kuwait)', 'International Bases'].map((region, i) => (
-                <div key={i} className="bg-white p-6 rounded-xl shadow-md border border-slate-100 flex items-center justify-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]" />
-                  <span className="font-bold text-slate-800">{region}</span>
-                </div>
-              ))}
+
+            {/* Management Team */}
+            <div className="bg-white p-8 rounded-lg border border-slate-200">
+              <h2 className="text-lg font-display font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <Users className="w-5 h-5 text-primary" />
+                MANAGEMENT TEAM
+              </h2>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                The management team, with its 30+ years of operations and long-standing reputation for reliability, has successfully established a network of global partners and a solid industrial product portfolio, focusing on delivering high-quality, responsive service.
+              </p>
             </div>
-          </div>
+          </motion.div>
         </div>
+
+        {/* Download CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="mt-12 text-center"
+        >
+          <button 
+            className="px-8 py-3 bg-primary text-white rounded-md font-semibold hover:bg-primary/90 transition-colors"
+            data-testid="button-download-capabilities"
+          >
+            DOWNLOAD OUR CAPABILITIES
+          </button>
+          <p className="text-xs text-slate-400 mt-4">
+            CAGE Code: 711V1 UEI: G8CXJ2PMKN76
+          </p>
+        </motion.div>
       </div>
     </div>
   );

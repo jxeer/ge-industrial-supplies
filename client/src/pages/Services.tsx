@@ -1,99 +1,181 @@
-import { Link } from "wouter";
-import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { 
+  Wrench, 
+  Globe2, 
+  Leaf, 
+  Building2, 
+  Truck, 
+  Users,
+  CheckCircle2
+} from "lucide-react";
+
+const services = [
+  {
+    id: "facility",
+    icon: Wrench,
+    title: "Facility Maintenance",
+    description: "This is a primary pillar of their business, specifically under the LOGCAP V contract. They provide comprehensive \"base ops\" and life support, including plumbing and HVAC, as well as technical inspections and mechanical systems maintenance for military installations.",
+    competencies: [
+      "Multi-trade base support: inspections, repairs, HVAC, water and wastewater",
+      "Custodial service and sanitation",
+      "Equipment leasing and fuel facility support",
+      "Security and site infrastructure"
+    ],
+    project: {
+      title: "Base Ops and Life Support, Qatar and Kuwait (LOGCAP V)",
+      client: "Vectrus Systems Corporation",
+      value: "$23.4M"
+    }
+  },
+  {
+    id: "logistics",
+    icon: Globe2,
+    title: "Global Logistics",
+    description: "We serve as a specialized merchant wholesaler, sourcing and delivering industrial machinery, commercial equipment, and specialty chemicals. Their reach is notably global, with a focus on the U.S., Mexico, and the Middle East (specifically Qatar and Kuwait).",
+    competencies: [
+      "Strategic Global Reach: Active operational presence in the U.S. and the Middle East, for USACE-Med and AFCENT operations",
+      "Wholesale & Procurement Expertise: Specialized merchant wholesaler for industrial supplies, commercial equipment, and plumbing/heating machinery (NAICS 423840, 423440, 423720)",
+      "Defense Logistics Integration: Over 40 task orders successfully executed under LOGCAP, providing recurring supplies for facility maintenance and aircraft support",
+      "Compliance & Scale: JCCS approval for Middle East operations and ISO 9001 certified quality management. Supported by a $100M aggregate bonding capacity"
+    ]
+  },
+  {
+    id: "environmental",
+    icon: Leaf,
+    title: "Environmental Management",
+    description: "G&E Industrial Supplies, Inc. provides comprehensive environmental and facility support solutions, specializing in sustainable waste elimination and mission-critical utility management for federal and international installations.",
+    competencies: [
+      "Waste Collection & Treatment: Dedicated focus on hazardous and non-hazardous waste collection, including specialized sewage tanker operations",
+      "Sustainable Programs: Implementation of sustainable waste elimination programs engineered to meet rigorous federal environmental standards",
+      "Utility Oversight: Expertise in mission-critical utility management to ensure operational readiness at international military installations",
+      "Compliance & Reliability: JCCS approval for Middle East operations and ISO 9001 certified quality management"
+    ]
+  },
+  {
+    id: "construction",
+    icon: Building2,
+    title: "Construction Services",
+    description: "G&E handles diverse, large-scale infrastructure projects, delivering turnkey engineering solutions that enhance operational readiness for federal and local agencies.",
+    competencies: [
+      "Facility Upgrades: Execution of diverse renovations, including medical air system improvements and modern facility upgrades",
+      "Specialized Construction: High-stakes performance in roofing services and airfield maintenance and emergency repairs",
+      "Engineering Support: Professional oversight for civil and electrical construction supervision to ensure total project compliance",
+      "Bonding Capacity: Supported by $30M single project and $100M aggregate bonding capacity to manage high-value infrastructure contracts"
+    ]
+  },
+  {
+    id: "equipment",
+    icon: Truck,
+    title: "Specialized Equipment",
+    description: "A core pillar of our defense operations involves the deployment and leasing of heavy machinery and tactical vehicles to support global readiness.",
+    competencies: [
+      "Heavy Machinery: Rapid deployment of material handling equipment and heavy vehicles for international construction and defense projects",
+      "Fleet Management: Flexible passenger car leasing programs tailored to meet the mobility needs of government and private-sector clients",
+      "Tactical Support: Supply of specialized items, including jet refueler trucks, trailers, and hazardous containment units for defense clients",
+      "Global Logistics: Integrated logistics and spares support to maintain equipment operationality in remote environments"
+    ]
+  },
+  {
+    id: "professional",
+    icon: Users,
+    title: "Professional Solutions",
+    description: "We offer \"HR Solutions\" by providing mission-critical technical manpower to government and private-sector partners to enhance business agility and operational oversight.",
+    competencies: [
+      "Skilled Manpower Outsourcing: Provision of technically trained staff, including specialized engineers and procurement officers, for long-term contract support",
+      "Leadership & Management: Delivery of experienced managerial and supervisory teams with a 30+ year reputation for reliability and responsive service",
+      "Strategic Staffing: Scalable human resource solutions designed to meet the technical requirements of large-scale federal task orders",
+      "International Expertise: Staffing solutions backed by JCCS approval and experience managing 40+ task orders under LOGCAP"
+    ]
+  }
+];
 
 export default function Services() {
-  const services = [
-    {
-      id: "facility-maintenance",
-      title: "Facility Maintenance",
-      description: "As a primary pillar under LOGCAP V, we provide comprehensive base operations support. Our teams handle life support services, plumbing, HVAC installation and repair, electrical systems, and rigorous technical inspections to ensure mission readiness.",
-      /* unsplash: industrial hvac technician */
-      image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1000&auto=format&fit=crop"
-    },
-    {
-      id: "global-logistics",
-      title: "Global Logistics",
-      description: "We are a specialized merchant wholesaler facilitating complex supply chains. We source and deliver industrial machinery, commercial equipment, and critical supplies across the US, Mexico, and the Middle East (Qatar, Kuwait).",
-      /* unsplash: warehouse logistics forklift */
-      image: "https://images.unsplash.com/photo-1580674285054-bed31e145f59?q=80&w=1000&auto=format&fit=crop"
-    },
-    {
-      id: "environmental",
-      title: "Environmental Management",
-      description: "ISO 9001 certified environmental solutions including sustainable waste elimination, hazardous and non-hazardous waste collection, and specialized sewage tanker operations compliant with strict federal regulations.",
-      /* unsplash: recycling waste management industrial */
-      image: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=1000&auto=format&fit=crop"
-    },
-    {
-      id: "construction",
-      title: "Construction Services",
-      description: "Capable of large-scale infrastructure projects. Our portfolio includes medical air systems, commercial roofing, airfield maintenance, and structural development with a $100M aggregate bonding capacity.",
-      /* unsplash: building construction structure steel */
-      image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1000&auto=format&fit=crop"
-    },
-    {
-      id: "specialized-equipment",
-      title: "Specialized Equipment",
-      description: "From heavy machinery to tactical support vehicles. We manage fleet leasing programs for passenger cars and operate specialized assets like jet refueler trucks for airfield support.",
-      /* unsplash: heavy truck transport industrial */
-      image: "https://images.unsplash.com/photo-1605218427306-635ba2439af2?q=80&w=1000&auto=format&fit=crop"
-    },
-    {
-      id: "professional",
-      title: "Professional Solutions",
-      description: "Providing human capital excellence. We offer HR solutions, skilled manpower outsourcing (engineers, procurement officers), and deploy experienced leadership teams to manage complex projects.",
-      /* unsplash: engineer architect meeting construction site */
-      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1000&auto=format&fit=crop"
-    }
-  ];
-
   return (
-    <div className="bg-white min-h-screen">
-      <div className="bg-slate-900 py-20 text-center">
-        <h1 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">Our Services</h1>
-        <p className="text-slate-400 max-w-2xl mx-auto px-4">
-          Integrated solutions designed for reliability, compliance, and efficiency in any environment.
-        </p>
-      </div>
+    <div className="min-h-screen bg-slate-50">
+      {/* Header */}
+      <section className="bg-slate-900 text-white py-16">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h1 className="text-4xl md:text-5xl font-display font-bold mb-4">Our Capabilities</h1>
+            <p className="text-slate-300 max-w-2xl mx-auto">
+              Comprehensive support solutions for federal government and private-sector clients worldwide.
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="space-y-24">
-          {services.map((service, index) => (
-            <div 
-              key={service.id} 
-              id={service.id}
-              className={`flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 items-center`}
-            >
-              <div className="w-full md:w-1/2">
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl group">
-                  <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
-                  <img 
-                    src={service.image} 
-                    alt={service.title} 
-                    className="w-full h-80 md:h-[400px] object-cover transform group-hover:scale-105 transition-transform duration-700" 
-                  />
+      {/* Services List - Like PDF layout */}
+      <div className="max-w-6xl mx-auto px-4 py-16 space-y-16">
+        {services.map((service, idx) => (
+          <motion.div
+            key={service.id}
+            id={service.id}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, delay: idx * 0.1 }}
+            className="scroll-mt-24"
+          >
+            <div className="grid md:grid-cols-2 gap-8 items-start">
+              {/* Left Panel - Dark Blue like PDF */}
+              <div className="bg-slate-800 text-white p-8 rounded-lg">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
+                    <service.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <h2 className="text-2xl font-display font-bold">{service.title}</h2>
                 </div>
-              </div>
-              <div className="w-full md:w-1/2">
-                <div className="inline-block px-3 py-1 rounded bg-slate-100 text-slate-600 font-bold text-xs uppercase tracking-wider mb-4">
-                  Service Area {index + 1}
-                </div>
-                <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-6">
-                  {service.title}
-                </h2>
-                <p className="text-lg text-slate-600 leading-relaxed mb-8">
+                <p className="text-slate-300 leading-relaxed">
                   {service.description}
                 </p>
-                <Link href="/contact">
-                  <button className="inline-flex items-center font-semibold text-primary hover:text-primary/80 transition-colors">
-                    Request Info <ArrowRight className="ml-2 w-4 h-4" />
-                  </button>
-                </Link>
+                {service.project && (
+                  <div className="mt-6 pt-6 border-t border-slate-700">
+                    <p className="text-xs text-slate-400 uppercase tracking-wider mb-2">Featured Project</p>
+                    <p className="font-semibold text-white">{service.project.title}</p>
+                    <p className="text-sm text-slate-400">Client: {service.project.client}</p>
+                    <p className="text-sm text-slate-400">Value: {service.project.value}</p>
+                  </div>
+                )}
+              </div>
+
+              {/* Right Panel - Core Competencies like PDF */}
+              <div className="bg-white p-8 rounded-lg border border-slate-200">
+                <h3 className="text-lg font-display font-bold text-slate-900 mb-6">Core Competencies</h3>
+                <ul className="space-y-4">
+                  {service.competencies.map((comp, cIdx) => (
+                    <li key={cIdx} className="flex gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700 text-sm leading-relaxed">{comp}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
-          ))}
-        </div>
+          </motion.div>
+        ))}
       </div>
+
+      {/* Bottom CTA */}
+      <section className="py-16 bg-primary text-white">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-3xl font-display font-bold mb-4">Ready to Partner?</h2>
+          <p className="text-primary-foreground/90 mb-8 max-w-xl mx-auto">
+            Contact us today to discuss how G&E Industrial Supplies can support your next mission-critical project.
+          </p>
+          <a href="/contact">
+            <button 
+              className="px-8 py-3 bg-white text-primary rounded-md font-semibold hover:bg-slate-100 transition-colors"
+              data-testid="button-contact-cta"
+            >
+              Contact Us
+            </button>
+          </a>
+        </div>
+      </section>
     </div>
   );
 }
