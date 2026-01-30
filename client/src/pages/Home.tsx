@@ -91,7 +91,7 @@ export default function Home() {
         {services.map((service, idx) => (
           <Link key={idx} href={service.href}>
             <div 
-              className="relative h-64 md:h-80 lg:h-96 group cursor-pointer overflow-hidden"
+              className="relative h-72 md:h-96 lg:h-[28rem] group cursor-pointer overflow-hidden"
               data-testid={`link-service-${idx}`}
             >
               {/* Image */}
