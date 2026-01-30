@@ -15,9 +15,10 @@ import Contact from "@/pages/Contact";
 function Router() {
   const [location] = useLocation();
   const isHomePage = location === "/";
-  const isServicePage = location.startsWith("/services/");
+  const isServiceDetailPage = location.startsWith("/services/") && location !== "/services";
+  const isServicesPage = location === "/services";
   const isCapabilitiesPage = location === "/capabilities";
-  const isFullScreenPage = isHomePage || isServicePage || isCapabilitiesPage;
+  const isFullScreenPage = isHomePage || isServiceDetailPage || isServicesPage || isCapabilitiesPage;
 
   return (
     <div className="flex flex-col min-h-screen">
