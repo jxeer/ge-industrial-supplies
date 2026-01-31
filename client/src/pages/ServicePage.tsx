@@ -20,7 +20,7 @@ const servicesData: Record<string, ServiceData> = {
     id: "facility-maintenance",
     title: ["Facility", "Maintenance"],
     description: "This is a primary pillar of their business, specifically under the LOGCAP V contract. They provide comprehensive \"base ops\" and life support, including plumbing and HVAC, as well as technical inspections and mechanical systems maintenance for military installations.",
-    backgroundImage: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2000&auto=format&fit=crop",
+    backgroundImage: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2000&auto=format&fit=crop",
     project: {
       title: "Base Ops and Life Support, Qatar and Kuwait (LOGCAP V)",
       client: "Vectrus Systems Corporation",
@@ -44,7 +44,7 @@ const servicesData: Record<string, ServiceData> = {
     id: "environmental-management",
     title: ["Environmental", "Management"],
     description: "G&E Industrial Supplies, Inc. provides comprehensive environmental and facility support solutions, specializing in sustainable waste elimination and mission-critical utility management for federal and international installations.",
-    backgroundImage: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=2000&auto=format&fit=crop",
+    backgroundImage: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?q=80&w=2000&auto=format&fit=crop",
     competencies: [
       "Waste Collection & Treatment: Dedicated focus on hazardous and non-hazardous waste collection, including specialized sewage tanker operations.",
       "Sustainable Programs: Implementation of sustainable waste elimination programs engineered to meet rigorous federal environmental standards.",
@@ -112,7 +112,7 @@ export default function ServicePage() {
           alt={service.title.join(' ')}
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/70" />
       </div>
 
       {/* Content */}
