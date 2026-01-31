@@ -1,3 +1,18 @@
+/**
+ * Contact.tsx - Contact Form Page
+ * 
+ * Allows visitors to submit inquiries to G&E Industrial Supplies.
+ * Form submissions are validated and stored in the PostgreSQL database.
+ * 
+ * Features:
+ * - Form validation using Zod schemas
+ * - Database persistence via API endpoint
+ * - Toast notifications for success/error states
+ * - Consistent dark theme matching other pages
+ * 
+ * Route: /contact
+ */
+
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -11,6 +26,14 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
+/**
+ * Contact Component
+ * 
+ * Renders the contact form page with:
+ * - Two-column layout: Contact Info (left), Form (right)
+ * - Form fields: Name, Company, Email, Phone, Message
+ * - Submit handling with loading states and notifications
+ */
 export default function Contact() {
   const { toast } = useToast();
   const submitMutation = useSubmitContact();

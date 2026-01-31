@@ -1,5 +1,27 @@
+/**
+ * Capabilities.tsx - Company Capabilities Statement Page
+ * 
+ * Displays G&E Industrial Supplies' official capabilities statement,
+ * designed to match the PDF mockup format. This page is commonly
+ * used when bidding on government contracts (SAM.gov, etc.)
+ * 
+ * Layout:
+ * - Full-screen Capitol building background (symbolic of federal work)
+ * - Two-column layout: Company Data (left), Corporate Summary (right)
+ * - Download button for PDF capabilities document
+ * - CAGE Code and UEI identifiers at bottom
+ * 
+ * Route: /capabilities
+ */
+
 import { motion } from "framer-motion";
 
+/**
+ * Capabilities Component
+ * 
+ * Renders the capabilities statement page with company information
+ * formatted for government contracting purposes.
+ */
 export default function Capabilities() {
   return (
     <div className="relative min-h-screen bg-slate-900 overflow-hidden">

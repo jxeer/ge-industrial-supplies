@@ -1,20 +1,53 @@
+/**
+ * ServicePage.tsx - Individual Service Detail Pages
+ * 
+ * Dynamic page component that renders detailed information for each
+ * of the six G&E service categories. Each service has its own:
+ * - Custom background image relevant to the service
+ * - Service title and description
+ * - Either a featured project OR list of core competencies
+ * 
+ * Routes: /services/:serviceId
+ * - /services/facility-maintenance
+ * - /services/global-logistics
+ * - /services/environmental-management
+ * - /services/construction-services
+ * - /services/specialized-equipment
+ * - /services/professional-solutions
+ */
+
 import { motion } from "framer-motion";
 import { useRoute } from "wouter";
 
+/**
+ * ServiceData Interface
+ * 
+ * Defines the structure for each service's content and configuration.
+ */
 interface ServiceData {
-  id: string;
-  title: string[];
-  description: string;
-  backgroundImage: string;
-  project?: {
+  id: string;                    // URL slug identifier
+  title: string[];               // Two-line title [line1, line2]
+  description: string;           // Service overview paragraph
+  backgroundImage: string;       // Full-screen background image URL
+  project?: {                    // Optional featured project (for Facility Maintenance)
     title: string;
     client: string;
     value: string;
     details: string;
   };
-  competencies?: string[];
+  competencies?: string[];       // List of core competencies (for other services)
 }
 
+/**
+ * Services Data
+ * 
+ * Static content for all six service pages. Each entry contains
+ * the service information, relevant background imagery, and either
+ * a featured project or list of core competencies.
+ * 
+ * Background images are sourced from Unsplash and selected to
+ * match each service category (industrial, logistics, environmental, etc.)
+ */
 const servicesData: Record<string, ServiceData> = {
   "facility-maintenance": {
     id: "facility-maintenance",
@@ -90,11 +123,24 @@ const servicesData: Record<string, ServiceData> = {
   }
 };
 
+/**
+ * ServicePage Component
+ * 
+ * Renders the detail page for an individual service.
+ * Uses URL parameters to determine which service to display.
+ * 
+ * Layout:
+ * - Full-screen background image with 70% dark overlay
+ * - Two-column content: Title/Description (left), Project/Competencies (right)
+ * - Animated entrance using Framer Motion
+ */
 export default function ServicePage() {
+  // Extract serviceId from URL parameters (e.g., "facility-maintenance")
   const [, params] = useRoute("/services/:serviceId");
   const serviceId = params?.serviceId || "";
   const service = servicesData[serviceId];
 
+  // Handle invalid service IDs with fallback UI
   if (!service) {
     return (
       <div className="min-h-screen bg-slate-900 flex items-center justify-center">
@@ -105,32 +151,42 @@ export default function ServicePage() {
 
   return (
     <div className="relative min-h-screen bg-slate-900 overflow-hidden">
-      {/* Background Image */}
+      
+      {/* ================================================================
+          BACKGROUND SECTION
+          Full-screen service-specific image with dark overlay
+          ================================================================ */}
       <div className="absolute inset-0 z-0">
         <img 
           src={service.backgroundImage} 
           alt={service.title.join(' ')}
           className="w-full h-full object-cover"
         />
+        {/* 70% dark overlay for text readability */}
         <div className="absolute inset-0 bg-black/70" />
       </div>
 
-      {/* Content */}
+      {/* ================================================================
+          CONTENT SECTION
+          Two-column layout with animated entrance
+          ================================================================ */}
       <div className="relative z-10 min-h-screen flex items-center">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-24 w-full">
           <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-start">
             
-            {/* Left Column - Title and Description */}
+            {/* LEFT COLUMN: Service Title and Description */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
+              {/* Two-line italic title matching PDF mockup */}
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white leading-tight italic mb-8">
                 {service.title[0]}<br />
                 <span className="text-4xl md:text-5xl lg:text-6xl">{service.title[1]}</span>
               </h1>
               
+              {/* Description in semi-transparent panel */}
               <div className="bg-black/40 backdrop-blur-sm rounded-lg p-6 max-w-md">
                 <p className="text-white/90 text-sm md:text-base leading-relaxed">
                   {service.description}
@@ -138,12 +194,13 @@ export default function ServicePage() {
               </div>
             </motion.div>
 
-            {/* Right Column - Project or Competencies */}
+            {/* RIGHT COLUMN: Featured Project OR Core Competencies */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
+              {/* Render featured project if available (Facility Maintenance) */}
               {service.project ? (
                 <div className="space-y-4">
                   <div>
@@ -162,6 +219,7 @@ export default function ServicePage() {
                   </ul>
                 </div>
               ) : service.competencies ? (
+                /* Render competencies list for other services */
                 <div className="bg-black/40 backdrop-blur-sm rounded-lg p-6">
                   <h2 className="text-xl font-bold text-white mb-4">Core Competencies:</h2>
                   <ul className="space-y-3">
