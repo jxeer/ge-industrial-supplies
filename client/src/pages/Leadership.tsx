@@ -4,7 +4,9 @@ import { Link } from "wouter";
 import { X } from "lucide-react";
 import ajithPhoto from "@assets/Ajith-Photo_1771271267641.jpg";
 import johnPaulPhoto from "@assets/John_Paul_Vice_President_1771271267642.png";
+import davidBanksPhoto from "@assets/Screenshot_2026-02-16_at_2.51.02_PM_1771271514254.png";
 import melissaPhoto from "@assets/Melissa_Tate__1771271267643.jpg";
+import vivekPhoto from "@assets/Screenshot_2026-02-16_at_2.51.35_PM_1771271514256.png";
 
 const leaders = [
   {
@@ -22,7 +24,7 @@ const leaders = [
   {
     name: "David Banks",
     title: "Vice President, Mission Operations",
-    image: null,
+    image: davidBanksPhoto,
     bio: "David Banks is a senior executive and operations leader with more than two decades of experience driving performance, growth, and operational excellence across construction, petroleum engineering, energy services, industrial equipment, and government-supported operations. As Vice President of Mission Operations for G&E Industrial Supplies, he brings a disciplined, results-oriented approach to managing complex projects from initial engagement through execution, with a strong emphasis on accountability, profitability, and customer satisfaction. His leadership spans both CONUS and OCONUS environments, supporting mission-critical operations in high-demand and high-risk markets.\n\nWith a strong foundation in petroleum engineering principles and energy-sector operations, David has developed a deep understanding of upstream and midstream environments, asset reliability, infrastructure sustainment, and field-based operational logistics. This technical grounding enhances his ability to evaluate risk, optimize performance, and align engineering-driven execution with broader business strategy.\n\nThroughout his career, David has demonstrated a proven ability to scale organizations, build high-performing teams, and align operations with strategic business objectives. He has led regional and international operations, overseen large asset portfolios, developed and executed growth strategies, and partnered closely with executive leadership to improve margins, optimize costs, and strengthen customer value propositions.\n\nDavid's background combines operational rigor with entrepreneurial execution. In addition to his corporate leadership roles, he is a founding partner of a successful custom design and construction firm, giving him hands-on perspective in cost control, scheduling, contract administration, and client delivery. At G&E Industrial Supplies, David is focused on strengthening operational maturity, expanding market presence, and delivering reliable, high-quality solutions that support customer missions and long-term company growth."
   },
   {
@@ -34,7 +36,7 @@ const leaders = [
   {
     name: "Vivek Krishnamoorthy",
     title: "Program Manager \u2013 Qatar",
-    image: null,
+    image: vivekPhoto,
     bio: "Vivek Krishnamoorthy is a senior construction and infrastructure executive with over 15 years of progressive leadership experience delivering complex, high-value civil and infrastructure programs across Qatar and India. As Program Manager \u2013 Qatar, he provides executive oversight of multiple concurrent projects within mission-critical, high-security, and U.S. government-supported environments. His leadership is grounded in disciplined execution, operational accountability, and performance-driven results across technically demanding markets.\n\nIn his current role, Vivek directs end-to-end program operations from strategic planning and preconstruction through execution and closeout. He leads financial governance, procurement strategy, subcontractor management, contract administration, regulatory coordination, and stakeholder engagement to ensure projects are delivered safely, on schedule, and within budget.\n\nVivek has successfully delivered major infrastructure programs including underground metro stations, mega water reservoirs, high-capacity pumping stations, backup power facilities, and integrated utility networks. His technical expertise encompasses large-scale excavation, diaphragm wall systems, deep piling operations, waterproof concrete structures, GRP/HDPE/carbon steel pipeline installations, and comprehensive civil infrastructure works.\n\nThroughout his career, Vivek has demonstrated strong capabilities in budgeting, forecasting, cost control, competitive bidding, contract negotiation, and schedule optimization. He applies structured reporting frameworks and proactive risk mitigation strategies to improve predictability and operational maturity across project portfolios.\n\nCombining engineering execution expertise with program-level strategic oversight, Vivek operates effectively at the intersection of field operations and executive leadership. His focus remains on expanding operational excellence in Qatar, strengthening client partnerships, and delivering resilient infrastructure solutions that support mission objectives and long-term organizational growth."
   }
 ];
