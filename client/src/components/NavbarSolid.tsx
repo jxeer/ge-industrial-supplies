@@ -10,6 +10,7 @@ export function NavbarSolid() {
     { href: "/capabilities", label: "Capabilities" },
     { href: "/services", label: "Services" },
     { href: "/contract-vehicles", label: "Contract Vehicles" },
+    { href: "/leadership", label: "Leadership" },
     { href: "/contact", label: "Contact Us" },
   ];
 
