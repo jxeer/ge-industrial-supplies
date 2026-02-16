@@ -4,7 +4,7 @@
  * The main landing page for G&E Industrial Supplies website featuring:
  * - Full-screen space/Earth background image
  * - Centered hero section with company tagline
- * - Six clickable service panels at the bottom
+ * - Seven clickable service panels at the bottom
  * 
  * Design Philosophy:
  * - Immersive full-screen experience
@@ -18,14 +18,20 @@ import { Link } from "wouter";
 /**
  * Service Panel Data
  * 
- * Configuration for the six service panels displayed at the bottom of the homepage.
+ * Configuration for the seven service panels displayed at the bottom of the homepage.
  * Each panel links to its detailed service page.
+ * Terminology aligned with federal contracting standards.
  */
 const services = [
   { 
-    title: "Facility\nMaintenance",
+    title: "Facility\nSupport",
     image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=800&auto=format&fit=crop",
-    href: "/services/facility-maintenance"
+    href: "/services/facility-support"
+  },
+  { 
+    title: "Operations &\nMaintenance",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop",
+    href: "/services/operations-maintenance"
   },
   { 
     title: "Global\nLogistics",
@@ -33,9 +39,9 @@ const services = [
     href: "/services/global-logistics"
   },
   { 
-    title: "Environmental\nManagement",
+    title: "Waste Mgmt &\nEnvironmental",
     image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=800&auto=format&fit=crop",
-    href: "/services/environmental-management"
+    href: "/services/waste-management-environmental"
   },
   { 
     title: "Construction\nServices",
@@ -121,14 +127,14 @@ export default function Home() {
 
       {/* ================================================================
           SERVICE PANELS SECTION
-          Six clickable image panels linking to individual service pages
-          Responsive: 3 columns on mobile, 6 columns on desktop
+          Seven clickable image panels linking to individual service pages
+          Responsive: auto-fit columns on mobile, 7 columns on desktop
           ================================================================ */}
       <motion.div 
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
-        className="relative z-20 grid grid-cols-3 md:grid-cols-6 w-full"
+        className="relative z-20 grid grid-cols-4 md:grid-cols-7 w-full"
       >
         {services.map((service, idx) => (
           <Link key={idx} href={service.href}>
@@ -146,7 +152,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30 group-hover:from-black/80 transition-colors" />
               {/* Service title positioned at bottom */}
               <div className="absolute bottom-6 left-4 right-4">
-                <h3 className="text-white text-sm md:text-base font-medium leading-tight whitespace-pre-line">
+                <h3 className="text-white text-xs md:text-sm font-medium leading-tight whitespace-pre-line">
                   {service.title}
                 </h3>
               </div>

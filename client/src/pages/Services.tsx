@@ -1,11 +1,25 @@
+/**
+ * Services.tsx - Services Overview Page
+ * 
+ * Displays all seven G&E service categories in a grid layout.
+ * Service terminology aligned with federal contracting standards.
+ * 
+ * Route: /services
+ */
+
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 
 const services = [
   {
-    id: "facility-maintenance",
-    title: "Facility Maintenance",
-    description: "Comprehensive base ops and life support including plumbing, HVAC, and mechanical systems maintenance."
+    id: "facility-support",
+    title: "Facility Support",
+    description: "Comprehensive base ops and life support including plumbing, HVAC, technical inspections, and mechanical systems for military installations."
+  },
+  {
+    id: "operations-maintenance",
+    title: "Operations & Maintenance (O&M)",
+    description: "Recurring preventive and corrective maintenance programs for government and defense facilities, ensuring sustained operational readiness."
   },
   {
     id: "global-logistics",
@@ -13,9 +27,9 @@ const services = [
     description: "Specialized merchant wholesaler sourcing and delivering industrial machinery and commercial equipment worldwide."
   },
   {
-    id: "environmental-management",
-    title: "Environmental Management",
-    description: "Sustainable waste elimination and mission-critical utility management for federal installations."
+    id: "waste-management-environmental",
+    title: "Waste Management & Environmental Services",
+    description: "Sustainable waste collection, treatment, and elimination programs meeting rigorous federal environmental standards."
   },
   {
     id: "construction-services",

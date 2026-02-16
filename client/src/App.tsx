@@ -21,6 +21,7 @@ import Home from "@/pages/Home";
 import Capabilities from "@/pages/Capabilities";
 import Services from "@/pages/Services";
 import ServicePage from "@/pages/ServicePage";
+import ContractVehicles from "@/pages/ContractVehicles";
 import Contact from "@/pages/Contact";
 
 /**
@@ -39,9 +40,10 @@ function Router() {
   const isServicesPage = location === "/services";
   const isCapabilitiesPage = location === "/capabilities";
   const isContactPage = location === "/contact";
+  const isContractVehiclesPage = location === "/contract-vehicles";
   
   // Full-screen pages use immersive backgrounds without standard nav/footer
-  const isFullScreenPage = isHomePage || isServiceDetailPage || isServicesPage || isCapabilitiesPage || isContactPage;
+  const isFullScreenPage = isHomePage || isServiceDetailPage || isServicesPage || isCapabilitiesPage || isContactPage || isContractVehiclesPage;
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -59,6 +61,7 @@ function Router() {
           <Route path="/capabilities" component={Capabilities} />
           <Route path="/services" component={Services} />
           <Route path="/services/:serviceId" component={ServicePage} />
+          <Route path="/contract-vehicles" component={ContractVehicles} />
           <Route path="/contact" component={Contact} />
           <Route component={NotFound} />
         </Switch>

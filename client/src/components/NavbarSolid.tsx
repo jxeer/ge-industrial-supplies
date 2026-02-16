@@ -9,6 +9,7 @@ export function NavbarSolid() {
   const links = [
     { href: "/capabilities", label: "Capabilities" },
     { href: "/services", label: "Services" },
+    { href: "/contract-vehicles", label: "Contract Vehicles" },
     { href: "/contact", label: "Contact Us" },
   ];
 
