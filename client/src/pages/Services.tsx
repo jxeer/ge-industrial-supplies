@@ -37,9 +37,9 @@ const services = [
     description: "Large-scale infrastructure projects and turnkey engineering solutions for operational readiness."
   },
   {
-    id: "specialized-equipment",
-    title: "Specialized Equipment",
-    description: "Deployment and leasing of heavy machinery and tactical vehicles for global defense operations."
+    id: "industrial-supply-distribution",
+    title: "Industrial Supply, Logistics & Distribution",
+    description: "Mission-ready industrial and commercial supplies with reliable logistics and distribution capabilities for military installations and federal facilities."
   },
   {
     id: "professional-solutions",

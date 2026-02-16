@@ -109,16 +109,18 @@ const servicesData: Record<string, ServiceData> = {
       "Bonding Capacity: Supported by $30M single project and $100M aggregate bonding capacity to manage high-value infrastructure contracts."
     ]
   },
-  "specialized-equipment": {
-    id: "specialized-equipment",
-    title: ["Specialized", "Equipment"],
-    description: "A core pillar of our defense operations involves the deployment and leasing of heavy machinery and tactical vehicles to support global readiness.",
+  "industrial-supply-distribution": {
+    id: "industrial-supply-distribution",
+    title: ["Industrial Supply,", "Logistics & Distribution"],
+    description: "G&E Industrial Supplies provides mission-ready industrial and commercial supplies supported by reliable logistics and distribution capabilities. We support military installations, federal facilities, and industrial operations with MRO materials, safety and PPE, tools and equipment, janitorial and sanitation products, electrical and mechanical components, and time-sensitive specialty items—delivered where and when needed.",
     backgroundImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2000&auto=format&fit=crop",
     competencies: [
-      "Heavy Machinery: Rapid deployment of material handling equipment and heavy vehicles for international construction and defense projects.",
-      "Fleet Management: Flexible passenger car leasing programs tailored to meet the mobility needs of government and private-sector clients.",
-      "Tactical Support: Supply of specialized items, including jet refueler trucks, trailers, and hazardous containment units for defense clients.",
-      "Global Logistics: Integrated logistics and spares support to maintain equipment operationality in remote environments."
+      "MRO Materials: Maintenance, repair, and operations supplies to keep facilities and equipment running at peak readiness.",
+      "Safety & PPE: Personal protective equipment and safety products meeting federal compliance and OSHA standards.",
+      "Tools & Equipment: Industrial-grade tools and equipment for construction, maintenance, and field operations.",
+      "Janitorial & Sanitation: Cleaning and sanitation products for facility hygiene and environmental compliance.",
+      "Electrical & Mechanical Components: Critical electrical and mechanical parts for systems maintenance and infrastructure support.",
+      "Time-Sensitive Specialty Items: Rapid procurement and delivery of hard-to-find and mission-critical specialty supplies."
     ]
   },
   "professional-solutions": {

@@ -49,9 +49,9 @@ const services = [
     href: "/services/construction-services"
   },
   { 
-    title: "Specialized\nEquipment",
+    title: "Industrial Supply\n& Distribution",
     image: "https://images.unsplash.com/photo-1580901369227-308f6f40bdeb?q=80&w=800&auto=format&fit=crop",
-    href: "/services/specialized-equipment"
+    href: "/services/industrial-supply-distribution"
   },
   { 
     title: "Professional\nSolutions",
