@@ -1,0 +1,297 @@
+ulian,
+
+Below is a structured implementation brief you can send directly to Julian. It is written so a web developer can execute without interpretation gaps.
+
+You can paste this into Slack or email as-is.
+
+
+---
+
+G&E Website – Revision Brief (Rev 2)
+
+Objective
+
+Refine the current draft to align with federal / DoD procurement positioning based on Melissa’s direction.
+
+This is a structural and terminology update, not a redesign.
+
+Keep this as a strong single marketing site with improved navigation and federal alignment.
+
+
+---
+
+1. Navigation Structure Update
+
+Primary Navigation
+
+Home
+About (Dropdown)
+Services
+Industrial Supply, Logistics & Distribution
+Contact
+
+
+---
+
+About Dropdown Structure
+
+About
+→ Company Overview
+→ Executive Leadership
+
+
+---
+
+2. Page Structure Overview
+
+HOME (Landing Page)
+
+Purpose:
+
+High-impact capability positioning
+
+Federal buyer alignment
+
+Clear service categorization
+
+
+
+---
+
+HOME Layout Order (Top to Bottom)
+
+1. Hero Section
+
+Federal-facing headline
+
+Mission-readiness positioning
+
+Short 2–3 sentence summary
+
+CTA: “Contact G&E” or “Engage With Us”
+
+
+
+
+
+---
+
+2. Integrated Mission & Installation Support Section
+
+
+
+Header: Integrated Mission & Installation Support Services
+
+Positioning:
+
+Enables DoD readiness
+
+Global installation support
+
+Execution under large prime contractors
+
+Reliability-centered maintenance methodology
+
+
+Include outcome bullets visually:
+
+• Increase operational reliability
+• Reduce lifecycle cost of ownership
+• Improve installation quality of life
+• Sustain and enhance mission readiness
+
+
+---
+
+3. Core Capabilities Grid
+
+
+
+Present in clean multi-column grid layout:
+
+Facilities Engineering & Management
+Operations & Maintenance (O&M) Services
+Waste Management & Environmental Services
+Bulk & Retail Fuel / Water Distribution Support
+Airfield Operations & Ground Support
+Food Service Operations & Logistics
+Power Generation & Utilities Management
+Emergency & Critical Response Services
+Transportation & Fleet Management
+Physical Security & Installation Support Services
+
+Important: Rename:
+
+“Facility Maintenance” → Facility Support Services
+
+“Environmental” → Waste Management & Environmental Services
+
+Add O&M as standalone service
+
+
+
+---
+
+4. Contract Vehicles Section
+
+
+
+Add new section titled:
+
+Multiple Award Contracts & Contract Vehicles
+
+Content Theme:
+
+FAR-based acquisition familiarity
+
+Task order execution
+
+IDIQ / MATOC / SATOC / SABER understanding
+
+Procurement literacy
+
+
+Tone: Position as experienced within structured federal contracting environments.
+
+
+---
+
+5. Industrial Supply, Logistics & Distribution Section
+
+
+
+Rename Wholesale to:
+
+Industrial Supply, Logistics & Distribution
+
+Insert this approved copy:
+
+G&E Industrial Supplies provides mission-ready industrial and commercial supplies supported by reliable logistics and distribution capabilities. We support military installations, federal facilities, and industrial operations with MRO materials, safety and PPE, tools and equipment, janitorial and sanitation products, electrical and mechanical components, and time-sensitive specialty items delivered where and when needed.
+
+Keep it clean and procurement-focused.
+
+
+---
+
+6. Leadership Preview Section (Optional on Home)
+
+
+
+Short teaser with:
+
+Executive headshots placeholder
+
+“Meet Our Leadership” CTA linking to Executive Leadership page
+
+
+
+---
+
+3. ABOUT SECTION
+
+Company Overview Page
+
+Purpose:
+
+Corporate identity
+
+Mission and operational philosophy
+
+Not service duplication
+
+
+Include:
+
+Company mission
+
+Federal alignment
+
+Operational footprint
+
+Execution discipline
+
+Reliability-centered methodology mention
+
+
+Keep it institutional and minimal.
+
+
+---
+
+Executive Leadership Page
+
+Structure:
+
+Each leader block includes:
+
+Headshot placeholder
+
+Name
+
+Title
+
+Structured executive bio
+
+
+Initial profiles:
+
+Ajith K. Nair – President
+Melissa Harris Tate – Director of Business Development & Capture Management
+
+Melissa bio should emphasize:
+
+$4.5B in awarded/pursued contracts
+
+FAR acquisition experience
+
+IDIQ / MATOC / SATOC / SABER
+
+CMAR North Terminal project reference
+
+SAME leadership
+
+
+Make layout scalable for future leadership additions.
+
+
+---
+
+4. Design Direction
+
+Clean, federal aesthetic
+
+Strong typography hierarchy
+
+No heavy animation
+
+No commercial stock clichés
+
+Infrastructure / installation imagery preferred
+
+Minimal color shifts
+
+Professional spacing and white space
+
+
+
+---
+
+5. Technical Execution Notes
+
+Keep site responsive
+
+Maintain existing draft domain
+
+Version this build as “Rev 2”
+
+Do not expand page count beyond:
+
+Home
+
+About (2 nested pages)
+
+Services (if separated later)
+
+Industrial Supply page
+
+Contact

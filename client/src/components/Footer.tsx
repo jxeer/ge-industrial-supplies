@@ -32,8 +32,10 @@ export function Footer() {
             <h3 className="text-white text-lg font-bold mb-6 font-display">Quick Links</h3>
             <ul className="space-y-3 text-sm">
               <li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li>
-              <li><Link href="/capabilities" className="hover:text-primary transition-colors">Capabilities</Link></li>
+              <li><Link href="/about" className="hover:text-primary transition-colors">Company Overview</Link></li>
+              <li><Link href="/leadership" className="hover:text-primary transition-colors">Executive Leadership</Link></li>
               <li><Link href="/services" className="hover:text-primary transition-colors">Services</Link></li>
+              <li><Link href="/contract-vehicles" className="hover:text-primary transition-colors">Contract Vehicles</Link></li>
               <li><Link href="/contact" className="hover:text-primary transition-colors">Contact Us</Link></li>
             </ul>
           </div>
@@ -42,11 +44,12 @@ export function Footer() {
           <div>
             <h3 className="text-white text-lg font-bold mb-6 font-display">Core Services</h3>
             <ul className="space-y-3 text-sm">
-              <li>Facility Maintenance</li>
+              <li>Facility Support Services</li>
+              <li>Operations & Maintenance (O&M)</li>
               <li>Global Logistics</li>
-              <li>Environmental Management</li>
+              <li>Waste Management & Environmental</li>
               <li>Construction Services</li>
-              <li>Specialized Equipment</li>
+              <li>Industrial Supply & Distribution</li>
               <li>Professional Solutions</li>
             </ul>
           </div>

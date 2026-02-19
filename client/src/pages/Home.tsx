@@ -1,165 +1,285 @@
-/**
- * Home.tsx - Landing Page Component
- * 
- * The main landing page for G&E Industrial Supplies website featuring:
- * - Full-screen space/Earth background image
- * - Centered hero section with company tagline
- * - Seven clickable service panels at the bottom
- * 
- * Design Philosophy:
- * - Immersive full-screen experience
- * - High-impact visuals for corporate/government clients
- * - Clear call-to-action directing to services
- */
-
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import { CheckCircle, ArrowRight } from "lucide-react";
+import ajithPhoto from "@assets/Ajith-Photo_1771271267641.jpg";
+import johnPaulPhoto from "@assets/John_Paul_Vice_President_1771271267642.png";
+import melissaPhoto from "@assets/Melissa_Tate__1771271267643.jpg";
 
-/**
- * Service Panel Data
- * 
- * Configuration for the seven service panels displayed at the bottom of the homepage.
- * Each panel links to its detailed service page.
- * Terminology aligned with federal contracting standards.
- */
-const services = [
-  { 
-    title: "Facility\nSupport",
-    image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=800&auto=format&fit=crop",
-    href: "/services/facility-support"
-  },
-  { 
-    title: "Operations &\nMaintenance",
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop",
-    href: "/services/operations-maintenance"
-  },
-  { 
-    title: "Global\nLogistics",
-    image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=800&auto=format&fit=crop",
-    href: "/services/global-logistics"
-  },
-  { 
-    title: "Waste Mgmt &\nEnvironmental",
-    image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=800&auto=format&fit=crop",
-    href: "/services/waste-management-environmental"
-  },
-  { 
-    title: "Construction\nServices",
-    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800&auto=format&fit=crop",
-    href: "/services/construction-services"
-  },
-  { 
-    title: "Industrial Supply\n& Distribution",
-    image: "https://images.unsplash.com/photo-1580901369227-308f6f40bdeb?q=80&w=800&auto=format&fit=crop",
-    href: "/services/industrial-supply-distribution"
-  },
-  { 
-    title: "Professional\nSolutions",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop",
-    href: "/services/professional-solutions"
-  },
+const capabilities = [
+  "Facilities Engineering & Management",
+  "Operations & Maintenance (O&M) Services",
+  "Waste Management & Environmental Services",
+  "Bulk & Retail Fuel / Water Distribution Support",
+  "Airfield Operations & Ground Support",
+  "Food Service Operations & Logistics",
+  "Power Generation & Utilities Management",
+  "Emergency & Critical Response Services",
+  "Transportation & Fleet Management",
+  "Physical Security & Installation Support Services",
 ];
 
-/**
- * Home Component
- * 
- * Renders the landing page with:
- * 1. Full-screen background with gradient overlays
- * 2. Animated hero content with company tagline
- * 3. Grid of service panels that link to detail pages
- */
+const missionOutcomes = [
+  "Increase operational reliability",
+  "Reduce lifecycle cost of ownership",
+  "Improve installation quality of life",
+  "Sustain and enhance mission readiness",
+];
+
+const contractVehicles = [
+  { name: "LOGCAP V", agency: "U.S. Army / ACC-RI" },
+  { name: "GSA Schedule", agency: "General Services Administration" },
+  { name: "USACE MATOC", agency: "USACE - Middle East District" },
+  { name: "DLA Tailored Logistics Support", agency: "Defense Logistics Agency" },
+];
+
+const leadershipPreview = [
+  { name: "Ajith K. Nair", title: "President & CEO", image: ajithPhoto },
+  { name: "John Paul", title: "VP, Federal Programs", image: johnPaulPhoto },
+  { name: "Melissa Harris Tate", title: "Director, BD & Capture", image: melissaPhoto },
+];
+
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-black flex flex-col">
-      
-      {/* ================================================================
-          BACKGROUND SECTION
-          Full-screen space/Earth image with gradient overlays
-          ================================================================ */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=2072&auto=format&fit=crop" 
-          alt="Earth from space" 
-          className="w-full h-full object-cover"
-        />
-        {/* Dark gradient overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
-        {/* Blue glow arc effect at bottom for visual interest */}
-        <div className="absolute bottom-[30%] left-0 right-0 h-40 bg-gradient-to-t from-cyan-400/30 via-cyan-500/15 to-transparent blur-2xl"></div>
+    <div className="relative bg-black">
+
+      <div className="relative min-h-screen flex flex-col">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=2072&auto=format&fit=crop"
+            alt="Earth from space"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
+          <div className="absolute bottom-[30%] left-0 right-0 h-40 bg-gradient-to-t from-cyan-400/30 via-cyan-500/15 to-transparent blur-2xl" />
+        </div>
+
+        <div className="relative z-20 flex-1 flex flex-col items-center justify-center text-center px-4 pt-24">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl"
+          >
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-tight mb-8 tracking-tight italic">
+              DELIVERING TURNKEY<br />
+              SOLUTIONS FOR<br />
+              GLOBAL READINESS
+            </h1>
+
+            <p className="text-base md:text-lg text-slate-200 mb-10 max-w-2xl mx-auto leading-relaxed">
+              HUBZone-certified small business enabling DoD readiness through integrated facility support, operations & maintenance, industrial logistics, and environmental services worldwide.
+            </p>
+
+            <Link href="/contact">
+              <button
+                className="px-10 py-4 border-2 border-white text-white font-semibold text-sm tracking-wider hover:bg-white hover:text-black transition-all"
+                data-testid="button-contact-cta"
+              >
+                ENGAGE WITH US
+              </button>
+            </Link>
+          </motion.div>
+        </div>
+
+        <div className="relative z-20 pb-4">
+          <div className="flex justify-center">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 1.2 }}
+              className="animate-bounce text-white/40"
+            >
+              <ArrowRight className="w-6 h-6 rotate-90" />
+            </motion.div>
+          </div>
+        </div>
       </div>
 
-      {/* ================================================================
-          HERO CONTENT SECTION
-          Centered company tagline and call-to-action button
-          ================================================================ */}
-      <div className="relative z-20 flex-1 flex flex-col items-center justify-center text-center px-4 pt-24">
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-4xl"
-        >
-          {/* Main headline - matches PDF mockup styling */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-tight mb-8 tracking-tight italic">
-            DELIVERING TURNKEY<br />
-            SOLUTIONS FOR<br />
-            GLOBAL READINESS
-          </h1>
-          
-          {/* Subheadline describing company credentials */}
-          <p className="text-base md:text-lg text-slate-200 mb-10 max-w-2xl mx-auto leading-relaxed">
-            HUBZone-certified small business providing critical facility
-            support, industrial logistics, and environmental services to
-            the federal government and private sectors worldwide.
-          </p>
-          
-          {/* Primary CTA button */}
-          <Link href="/services">
-            <button 
-              className="px-10 py-4 border-2 border-white text-white font-semibold text-sm tracking-wider hover:bg-white hover:text-black transition-all"
-              data-testid="button-view-capabilities"
-            >
-              VIEW OUR CAPABILITIES
+      <section className="relative bg-slate-900 py-20 md:py-28">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-6 tracking-tight" data-testid="heading-mission-support">
+              INTEGRATED MISSION & INSTALLATION SUPPORT SERVICES
+            </h2>
+            <p className="text-white/60 text-base md:text-lg max-w-3xl mb-12 leading-relaxed">
+              G&E enables Department of Defense readiness through comprehensive installation support services. We deliver scalable, compliant solutions under large prime contractors using reliability-centered maintenance methodology across global operations.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
+            {missionOutcomes.map((outcome, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.1 * i }}
+                className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-md px-5 py-4"
+                data-testid={`outcome-${i}`}
+              >
+                <CheckCircle className="w-5 h-5 text-cyan-400 shrink-0" />
+                <span className="text-white/80 text-sm md:text-base font-medium">{outcome}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="relative bg-slate-950 py-20 md:py-28">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl md:text-4xl font-display font-bold text-white mb-12 tracking-tight"
+            data-testid="heading-core-capabilities"
+          >
+            CORE CAPABILITIES
+          </motion.h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {capabilities.map((cap, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.05 * i }}
+                className="border border-white/10 rounded-md px-5 py-4 bg-white/5 hover:bg-white/10 transition-colors"
+                data-testid={`capability-${i}`}
+              >
+                <span className="text-white/80 text-sm md:text-base font-medium">{cap}</span>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-10"
+          >
+            <Link href="/services">
+              <button className="px-8 py-3 border border-white/30 text-white/80 hover:text-white hover:border-white text-sm tracking-wider font-medium transition-all" data-testid="link-all-services">
+                VIEW ALL SERVICES
+              </button>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="relative bg-slate-900 py-20 md:py-28">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl md:text-4xl font-display font-bold text-white mb-4 tracking-tight"
+            data-testid="heading-contract-vehicles"
+          >
+            MULTIPLE AWARD CONTRACTS & CONTRACT VEHICLES
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-white/60 text-base md:text-lg max-w-3xl mb-12 leading-relaxed"
+          >
+            G&E operates within structured federal contracting environments with demonstrated experience in FAR-based acquisition, task order execution, and procurement under IDIQ, MATOC, SATOC, and SABER contract vehicles.
+          </motion.p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+            {contractVehicles.map((cv, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.1 * i }}
+                className="border border-white/10 rounded-md p-5 bg-white/5"
+                data-testid={`contract-vehicle-${i}`}
+              >
+                <h3 className="text-white font-display font-bold text-lg mb-1">{cv.name}</h3>
+                <p className="text-white/50 text-sm">{cv.agency}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <Link href="/contract-vehicles">
+            <button className="px-8 py-3 border border-white/30 text-white/80 hover:text-white hover:border-white text-sm tracking-wider font-medium transition-all" data-testid="link-contract-vehicles">
+              VIEW CONTRACT VEHICLES
             </button>
           </Link>
-        </motion.div>
-      </div>
+        </div>
+      </section>
 
-      {/* ================================================================
-          SERVICE PANELS SECTION
-          Seven clickable image panels linking to individual service pages
-          Responsive: auto-fit columns on mobile, 7 columns on desktop
-          ================================================================ */}
-      <motion.div 
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-        className="relative z-20 grid grid-cols-4 md:grid-cols-7 w-full"
-      >
-        {services.map((service, idx) => (
-          <Link key={idx} href={service.href}>
-            <div 
-              className="relative h-72 md:h-96 lg:h-[28rem] group cursor-pointer overflow-hidden"
-              data-testid={`link-service-${idx}`}
-            >
-              {/* Service image with hover zoom effect */}
-              <img 
-                src={service.image} 
-                alt={service.title.replace('\n', ' ')}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              {/* Gradient overlay for text contrast */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30 group-hover:from-black/80 transition-colors" />
-              {/* Service title positioned at bottom */}
-              <div className="absolute bottom-6 left-4 right-4">
-                <h3 className="text-white text-xs md:text-sm font-medium leading-tight whitespace-pre-line">
-                  {service.title}
-                </h3>
-              </div>
-            </div>
-          </Link>
-        ))}
-      </motion.div>
+      <section className="relative bg-slate-950 py-20 md:py-28">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl md:text-4xl font-display font-bold text-white mb-12 tracking-tight"
+            data-testid="heading-leadership-preview"
+          >
+            EXECUTIVE LEADERSHIP
+          </motion.h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 mb-10">
+            {leadershipPreview.map((leader, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 * i }}
+                className="flex flex-col items-center text-center"
+                data-testid={`leader-preview-${i}`}
+              >
+                <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden mb-4 border-4 border-white/10 bg-slate-700">
+                  <img src={leader.image} alt={leader.name} className="w-full h-full object-cover" />
+                </div>
+                <h3 className="text-white font-display font-bold text-lg">{leader.name}</h3>
+                <p className="text-white/50 text-sm">{leader.title}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link href="/leadership">
+              <button className="px-8 py-3 border border-white/30 text-white/80 hover:text-white hover:border-white text-sm tracking-wider font-medium transition-all" data-testid="link-meet-leadership">
+                MEET OUR LEADERSHIP
+              </button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <footer className="bg-slate-950 border-t border-white/10 py-8">
+        <div className="max-w-6xl mx-auto px-6 flex flex-wrap justify-between items-center gap-6">
+          <div className="flex items-center gap-2">
+            <svg className="w-8 h-8 text-white/60" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97 0-.33-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1 0 .33.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1.01c.52.4 1.06.74 1.69.99l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1.01c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.66Z"/>
+            </svg>
+            <span className="text-white/60 text-sm font-display font-bold">G&E Industrial Supplies, Inc.</span>
+          </div>
+          <div className="flex gap-6 text-white/40 text-xs">
+            <span>CAGE: 711V1</span>
+            <span>UEI: G8CXJ2PMKN76</span>
+          </div>
+          <p className="text-white/30 text-xs">&copy; {new Date().getFullYear()} All rights reserved.</p>
+        </div>
+      </footer>
     </div>
   );
 }
