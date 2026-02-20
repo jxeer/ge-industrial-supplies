@@ -7,6 +7,7 @@ import johnPaulPhoto from "@assets/John_Paul_Vice_President_1771271267642.png";
 import davidBanksPhoto from "@assets/Screenshot_2026-02-16_at_2.51.02_PM_1771271514254.png";
 import melissaPhoto from "@assets/Melissa_Tate__1771271267643.jpg";
 import vivekPhoto from "@assets/Screenshot_2026-02-16_at_2.51.35_PM_1771271514256.png";
+import stephanPhoto from "@assets/Stephan_Headshot_1771619592702.jpg";
 
 const leaders = [
   {
@@ -38,6 +39,12 @@ const leaders = [
     title: "Program Manager \u2013 Qatar",
     image: vivekPhoto,
     bio: "Vivek Krishnamoorthy is a senior construction and infrastructure executive with over 15 years of progressive leadership experience delivering complex, high-value civil and infrastructure programs across Qatar and India. As Program Manager \u2013 Qatar, he provides executive oversight of multiple concurrent projects within mission-critical, high-security, and U.S. government-supported environments. His leadership is grounded in disciplined execution, operational accountability, and performance-driven results across technically demanding markets.\n\nIn his current role, Vivek directs end-to-end program operations from strategic planning and preconstruction through execution and closeout. He leads financial governance, procurement strategy, subcontractor management, contract administration, regulatory coordination, and stakeholder engagement to ensure projects are delivered safely, on schedule, and within budget.\n\nVivek has successfully delivered major infrastructure programs including underground metro stations, mega water reservoirs, high-capacity pumping stations, backup power facilities, and integrated utility networks. His technical expertise encompasses large-scale excavation, diaphragm wall systems, deep piling operations, waterproof concrete structures, GRP/HDPE/carbon steel pipeline installations, and comprehensive civil infrastructure works.\n\nThroughout his career, Vivek has demonstrated strong capabilities in budgeting, forecasting, cost control, competitive bidding, contract negotiation, and schedule optimization. He applies structured reporting frameworks and proactive risk mitigation strategies to improve predictability and operational maturity across project portfolios.\n\nCombining engineering execution expertise with program-level strategic oversight, Vivek operates effectively at the intersection of field operations and executive leadership. His focus remains on expanding operational excellence in Qatar, strengthening client partnerships, and delivering resilient infrastructure solutions that support mission objectives and long-term organizational growth."
+  },
+  {
+    name: "Stephan Mentler",
+    title: "Chief Operations Officer (COO)",
+    image: stephanPhoto,
+    bio: "A former soldier and first responder, Mr. Mentler possesses more than 30 years of experience across disciplines and industries. While focused on threat management policy, analysis, and planning for terrestrial and maritime, conventional and Chemical Biological Radiological Nuclear and Explosive (CBRNE) threats, he has been a Chief Operating Officer (COO) for a small business focused on growth. He has demonstrated experience in leading complex programs, business development, marketing, finance, change management, and general policy development and implementation. He consults on myriad programs and has supported federal, state, regional coalitions, local governments, and private sector partners in the U.S., Iraq, and Kuwait.\n\nIn addition to his demonstrated real-world practical experience, Mr. Mentler has a bachelor's degree in criminal justice and a master's degree in business administration. This integration of experience with an advanced education has allowed Mr. Mentler to develop, apply, and adapt solutions in a dynamic and evolving business and operational environment, across infrastructure sectors. Most importantly, he is customer centered and focused on delivering the best value in every business relationship."
   }
 ];
 
