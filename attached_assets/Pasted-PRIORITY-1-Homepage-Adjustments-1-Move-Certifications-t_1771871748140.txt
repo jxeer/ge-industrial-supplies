@@ -1,0 +1,106 @@
+PRIORITY 1 – Homepage Adjustments
+1. Move Certifications to Homepage
+
+Under the “Engage With Us” button on the homepage, add a credentials strip that includes:
+
+    UEI
+    CAGE Code
+    Bonding: 30M Single / 100M Aggregate
+
+This should appear:
+
+    Directly under the CTA
+    Clean, horizontal layout
+    Highly visible
+    Not cluttered
+
+Additionally: Add the bonding line permanently in the footer across all pages.
+
+Footer format: Bonding: 30M Single / 100M Aggregate
+PRIORITY 2 – Core Capabilities Visibility
+A. Add Construction to Core Capabilities Grid
+
+On the homepage “Core Capabilities” section:
+
+    Add “Construction” visibly in the grid.
+    Remove “Food Service Operations & Logistics” from the homepage grid (can remain on full services page).
+    Ensure Construction appears immediately when scrolling — no “View All” required.
+
+Goal: Agencies should immediately see “Construction” without clicking deeper.
+PRIORITY 3 – Contract Vehicles Section Corrections
+A. Remove GSA as Active
+
+    Change GSA from Active to “Pending”
+    Color the word “Pending” yellow
+    Do NOT show as Active
+
+B. Add Prime Attribution
+
+For contracts where G&E was not prime:
+
+Add prime contractor attribution after agency name using slash format:
+
+Example: Great Lakes Naval-AC-PRI / Vectrus Systems Corporation
+
+Vectrus spelling: V-E-C-T-R-U-S Systems Corporation
+
+All Middle East work → attribute to Vectrus.
+C. Add Additional NAICS Codes
+
+Under Contract Vehicles section (where NAICS codes are already listed), add:
+
+NAICS 236220 (Construction)
+NAICS 541330 (Mechanical Engineering)
+
+Keep formatting consistent with existing NAICS display.
+PRIORITY 4 – Log-CAP Construction Clarification
+
+Under Log-CAP description: Incorporate construction retrofitting language to reflect:
+
+    Building modifications
+    Retrofitting
+    Infrastructure adaptation for housing rescuees
+
+This supports NAICS 236220 positioning.
+
+Do not expand heavily. Just ensure construction scope is captured.
+PRIORITY 5 – About Page Language Alignment
+
+Replace “About Us” language with:
+
+The updated language Melissa previously emailed.
+
+Ensure:
+
+    Company Overview wording matches her federal-aligned language.
+    O&M and Facility Support terminology matches latest direction.
+    Remove outdated phrasing.
+
+Consistency matters more than volume.
+PRIORITY 6 – Executive Leadership Section
+
+Structure must support:
+
+Executive Leadership
+Administrative
+Engineers
+
+Do NOT remove anyone.
+
+Update:
+
+    Remove Melissa as Primary Point of Contact.
+    Replace POC with Jeff (President).
+    Update footer contact email accordingly.
+    Melissa remains in Executive Leadership with bio intact.
+
+PRIORITY 7 – Footer Updates (Global)
+
+Footer must include:
+
+    UEI
+    CAGE Code
+    Bonding: 30M Single / 100M Aggregate
+    Updated primary contact (Jeff)
+
+This must carry across all pages.
