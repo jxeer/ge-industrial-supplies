@@ -8,10 +8,10 @@ import melissaPhoto from "@assets/Melissa_Tate__1771271267643.jpg";
 const capabilities = [
   "Facilities Engineering & Management",
   "Operations & Maintenance (O&M) Services",
+  "Construction",
   "Waste Management & Environmental Services",
   "Bulk & Retail Fuel / Water Distribution Support",
   "Airfield Operations & Ground Support",
-  "Food Service Operations & Logistics",
   "Power Generation & Utilities Management",
   "Emergency & Critical Response Services",
   "Transportation & Fleet Management",
@@ -27,7 +27,7 @@ const missionOutcomes = [
 
 const contractVehicles = [
   { name: "LOGCAP V", agency: "U.S. Army / ACC-RI" },
-  { name: "GSA Schedule", agency: "General Services Administration" },
+  { name: "GSA Schedule", agency: "General Services Administration", pending: true },
   { name: "USACE MATOC", agency: "USACE - Middle East District" },
   { name: "DLA Tailored Logistics Support", agency: "Defense Logistics Agency" },
 ];
@@ -78,6 +78,20 @@ export default function Home() {
                 ENGAGE WITH US
               </button>
             </Link>
+
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="mt-10 flex flex-wrap justify-center gap-6 md:gap-10 text-white/70 text-xs md:text-sm tracking-wider"
+              data-testid="credentials-strip"
+            >
+              <span>UEI: G8CXJ2PMKN76</span>
+              <span className="hidden md:inline text-white/30">|</span>
+              <span>CAGE: 711V1</span>
+              <span className="hidden md:inline text-white/30">|</span>
+              <span>Bonding: $30M Single / $100M Aggregate</span>
+            </motion.div>
           </motion.div>
         </div>
 
@@ -208,8 +222,13 @@ export default function Home() {
                 className="border border-white/10 rounded-md p-5 bg-white/5"
                 data-testid={`contract-vehicle-${i}`}
               >
-                <h3 className="text-white font-display font-bold text-lg mb-1">{cv.name}</h3>
-                <p className="text-white/50 text-sm">{cv.agency}</p>
+                <div className="flex items-center gap-3">
+                  <h3 className="text-white font-display font-bold text-lg">{cv.name}</h3>
+                  {'pending' in cv && cv.pending && (
+                    <span className="text-yellow-400 text-xs font-semibold tracking-wider border border-yellow-400/30 px-2 py-0.5">Pending</span>
+                  )}
+                </div>
+                <p className="text-white/50 text-sm mt-1">{cv.agency}</p>
               </motion.div>
             ))}
           </div>
@@ -273,9 +292,10 @@ export default function Home() {
             </svg>
             <span className="text-white/60 text-sm font-display font-bold">G&E Industrial Supplies, Inc.</span>
           </div>
-          <div className="flex gap-6 text-white/40 text-xs">
+          <div className="flex flex-wrap gap-6 text-white/40 text-xs">
             <span>CAGE: 711V1</span>
             <span>UEI: G8CXJ2PMKN76</span>
+            <span>Bonding: $30M Single / $100M Aggregate</span>
           </div>
           <p className="text-white/30 text-xs">&copy; {new Date().getFullYear()} All rights reserved.</p>
         </div>

@@ -56,13 +56,16 @@ export default function About() {
           >
             <div className="max-w-3xl space-y-6 text-white/70 text-base md:text-lg leading-relaxed">
               <p>
-                G&E Industrial Supplies, Inc. is an SBA HUBZone-certified small business headquartered in El Paso, Texas. We provide integrated facility support, industrial supply, logistics, and environmental services to federal agencies, Department of Defense installations, prime contractors, and commercial operations worldwide.
+                G&E Industrial Supplies, Inc. is an SBA HUBZone-certified small business headquartered in El Paso, Texas. We provide integrated facility support, operations & maintenance (O&M), industrial supply, logistics, construction, and environmental services to federal agencies, Department of Defense installations, prime contractors, and commercial operations worldwide.
               </p>
               <p>
-                Founded on principles of integrity, operational discipline, and mission-focused execution, G&E has built a reputation for dependable performance in demanding environments. Our team brings decades of combined experience in government contracting, industrial distribution, construction management, and technical services delivery.
+                Founded on principles of integrity, operational discipline, and mission-focused execution, G&E has built a reputation for dependable performance in demanding environments. Our team brings decades of combined experience in government contracting, facility support services, construction management, and technical services delivery.
               </p>
               <p>
                 We operate within structured federal acquisition frameworks, maintaining full compliance with FAR-based procurement standards, quality management protocols, and regulatory requirements. Our experience spans IDIQ, MATOC, SATOC, and SABER contract vehicles, with a demonstrated ability to execute task orders efficiently and to standard.
+              </p>
+              <p>
+                G&E has delivered recurring facilities supply at Fort Bliss, TX and CARE Doha, Qatar (DoD Southwest) as a partner to Pride Industries and SOS International, providing filters, facilities parts, and laundry equipment spares. Additionally, under equipment leasing and logistics support contracts at CARE Doha and Camp Arifjan, G&E has supported renovations, construction, leased vehicles and heavy equipment, tower lights, custodial services, ablution units, relocations, and the supply of tools and spares in partnership with SOS International LLC and Vectrus Systems Corporation.
               </p>
             </div>
           </motion.div>

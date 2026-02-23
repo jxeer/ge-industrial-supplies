@@ -17,8 +17,8 @@ const contractVehicles = [
     name: "LOGCAP V",
     fullName: "Logistics Civil Augmentation Program V",
     agency: "U.S. Army / ACC-RI",
-    description: "Multiple award task order contract for comprehensive base operations support, facility maintenance, and life support services at military installations worldwide. G&E has successfully executed 40+ task orders under LOGCAP.",
-    naics: ["561210", "561720", "562111"],
+    description: "Multiple award task order contract for comprehensive base operations support, facility maintenance, life support services, and construction retrofitting at military installations worldwide. Scope includes building modifications, infrastructure adaptation for housing rescuees, and facility retrofitting in support of contingency operations. G&E has successfully executed 40+ task orders under LOGCAP.",
+    naics: ["561210", "561720", "562111", "236220"],
     status: "Active"
   },
   {
@@ -27,12 +27,12 @@ const contractVehicles = [
     agency: "General Services Administration",
     description: "Federal Supply Schedule contract enabling streamlined procurement of industrial supplies, equipment, and facility support services by federal, state, and local government agencies.",
     naics: ["423840", "423440", "423720"],
-    status: "Active"
+    status: "Pending"
   },
   {
     name: "USACE MATOC",
     fullName: "U.S. Army Corps of Engineers Multiple Award Task Order Contract",
-    agency: "USACE - Middle East District",
+    agency: "USACE - Middle East District / Vectrus Systems Corporation",
     description: "Task order contract for construction, facility maintenance, and engineering support services across USACE-Med areas of responsibility including the Middle East theater.",
     naics: ["236220", "238220", "562910"],
     status: "Active"
@@ -43,6 +43,14 @@ const contractVehicles = [
     agency: "Defense Logistics Agency",
     description: "Contract vehicle for specialized wholesale distribution of industrial supplies, machinery, and equipment to Department of Defense customers worldwide.",
     naics: ["423840", "423440"],
+    status: "Active"
+  },
+  {
+    name: "Great Lakes Naval-AC-PRI",
+    fullName: "Great Lakes Naval Installation Support / Vectrus Systems Corporation",
+    agency: "Great Lakes Naval-AC-PRI / Vectrus Systems Corporation",
+    description: "Facility support, equipment leasing, logistics support, renovations, construction, leased vehicles and heavy equipment, tower lights, custodial services, ablution units, relocations, and supply of tools and spares at CARE Doha and Camp Arifjan.",
+    naics: ["561210", "236220", "561720"],
     status: "Active"
   }
 ];
@@ -113,7 +121,11 @@ export default function ContractVehicles() {
                       {vehicle.fullName}
                     </p>
                   </div>
-                  <span className="inline-flex items-center px-3 py-1 text-xs font-semibold tracking-wider text-emerald-400 border border-emerald-400/30 bg-emerald-400/10 self-start whitespace-nowrap">
+                  <span className={`inline-flex items-center px-3 py-1 text-xs font-semibold tracking-wider self-start whitespace-nowrap ${
+                    vehicle.status === "Pending"
+                      ? "text-yellow-400 border border-yellow-400/30 bg-yellow-400/10"
+                      : "text-emerald-400 border border-emerald-400/30 bg-emerald-400/10"
+                  }`}>
                     {vehicle.status}
                   </span>
                 </div>
@@ -152,6 +164,39 @@ export default function ContractVehicles() {
                 <div key={idx} className="flex items-start gap-3">
                   <span className="text-white/60 mt-0.5">•</span>
                   <p className="text-white/80 text-sm leading-relaxed">{cert}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Additional NAICS Codes */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.55 }}
+            className="border border-white/20 p-6 md:p-8 mb-12"
+          >
+            <h2 className="text-xl font-bold text-white mb-6 tracking-wide">
+              NAICS CODES
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+              {[
+                { code: "236220", label: "Construction" },
+                { code: "238220", label: "Plumbing, Heating & A/C" },
+                { code: "423440", label: "Professional Equipment" },
+                { code: "423720", label: "Plumbing & Heating Equipment" },
+                { code: "423840", label: "Industrial Supplies" },
+                { code: "541330", label: "Mechanical Engineering" },
+                { code: "561210", label: "Facilities Support Services" },
+                { code: "561720", label: "Janitorial Services" },
+                { code: "562111", label: "Solid Waste Collection" },
+                { code: "562910", label: "Environmental Remediation" },
+              ].map((naics, idx) => (
+                <div key={idx} className="flex items-start gap-3">
+                  <span className="text-xs text-white/50 border border-white/15 px-2 py-1 font-mono whitespace-nowrap">
+                    {naics.code}
+                  </span>
+                  <p className="text-white/80 text-sm leading-relaxed">{naics.label}</p>
                 </div>
               ))}
             </div>

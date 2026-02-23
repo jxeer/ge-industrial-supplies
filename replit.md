@@ -4,6 +4,28 @@
 
 This is a marketing website for G&E Industrial Supplies, Inc., a HUBZone-certified small business providing facility maintenance, global logistics, environmental management, and construction services to government and defense contractors. The site showcases their capabilities, services, and contact information with a professional industrial/corporate aesthetic.
 
+## Key Business Data
+- **UEI**: G8CXJ2PMKN76
+- **CAGE Code**: 711V1
+- **Bonding**: $30M Single / $100M Aggregate
+- **Headquarters**: El Paso, TX
+- **Contact Email**: mtate@gbs-web.com (pending update to Jeff's email once confirmed)
+- **GSA Schedule Status**: Pending (not Active)
+- **Middle East contracts**: Attributed to Vectrus Systems Corporation as prime
+
+## Site Structure
+- **Homepage**: Hero with credentials strip (UEI/CAGE/Bonding), 10-item Core Capabilities grid (includes Construction), Contract Vehicles preview (GSA shown as Pending), Leadership preview
+- **About > Company Overview**: Mission statement with project experience (Fort Bliss, CARE Doha, Camp Arifjan), operational philosophy pillars, certifications
+- **About > Executive Leadership**: 3-section layout (Executive Leadership, Administrative, Engineers)
+- **Services**: 7 service categories aligned to federal terminology
+- **Contract Vehicles**: 5 vehicles with NAICS codes section, GSA as Pending (yellow), Great Lakes Naval-AC-PRI / Vectrus attribution
+- **Contact**: Contact form
+
+## Leadership Team (6 members)
+- **Executive**: Ajith K. Nair (CEO), John Paul (VP), David Banks (VP), Stephan Mentler (COO)
+- **Administrative**: Melissa Harris Tate (Director, BD & Capture)
+- **Engineers**: Vivek Krishnamoorthy (Program Manager – Qatar)
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.

@@ -79,7 +79,8 @@ export function Footer() {
             <div className="mt-8 pt-6 border-t border-white/10">
               <p className="text-xs text-slate-500">
                 UEI: G8CXJ2PMKN76 <br/>
-                CAGE: 711V1
+                CAGE: 711V1 <br/>
+                Bonding: $30M Single / $100M Aggregate
               </p>
             </div>
           </div>

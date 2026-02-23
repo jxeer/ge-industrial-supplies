@@ -9,6 +9,12 @@ import melissaPhoto from "@assets/Melissa_Tate__1771271267643.jpg";
 import vivekPhoto from "@assets/Screenshot_2026-02-16_at_2.51.35_PM_1771271514256.png";
 import stephanPhoto from "@assets/Stephan_Headshot_1771619592702.jpg";
 
+const leaderCategories = {
+  executive: [0, 1, 2, 3],
+  administrative: [4],
+  engineers: [5],
+};
+
 const leaders = [
   {
     name: "Ajith K. Nair",
@@ -29,6 +35,12 @@ const leaders = [
     bio: "David Banks is a senior executive and operations leader with more than two decades of experience driving performance, growth, and operational excellence across construction, petroleum engineering, energy services, industrial equipment, and government-supported operations. As Vice President of Mission Operations for G&E Industrial Supplies, he brings a disciplined, results-oriented approach to managing complex projects from initial engagement through execution, with a strong emphasis on accountability, profitability, and customer satisfaction. His leadership spans both CONUS and OCONUS environments, supporting mission-critical operations in high-demand and high-risk markets.\n\nWith a strong foundation in petroleum engineering principles and energy-sector operations, David has developed a deep understanding of upstream and midstream environments, asset reliability, infrastructure sustainment, and field-based operational logistics. This technical grounding enhances his ability to evaluate risk, optimize performance, and align engineering-driven execution with broader business strategy.\n\nThroughout his career, David has demonstrated a proven ability to scale organizations, build high-performing teams, and align operations with strategic business objectives. He has led regional and international operations, overseen large asset portfolios, developed and executed growth strategies, and partnered closely with executive leadership to improve margins, optimize costs, and strengthen customer value propositions.\n\nDavid's background combines operational rigor with entrepreneurial execution. In addition to his corporate leadership roles, he is a founding partner of a successful custom design and construction firm, giving him hands-on perspective in cost control, scheduling, contract administration, and client delivery. At G&E Industrial Supplies, David is focused on strengthening operational maturity, expanding market presence, and delivering reliable, high-quality solutions that support customer missions and long-term company growth."
   },
   {
+    name: "Stephan Mentler",
+    title: "Chief Operations Officer (COO)",
+    image: stephanPhoto,
+    bio: "A former soldier and first responder, Mr. Mentler possesses more than 30 years of experience across disciplines and industries. While focused on threat management policy, analysis, and planning for terrestrial and maritime, conventional and Chemical Biological Radiological Nuclear and Explosive (CBRNE) threats, he has been a Chief Operating Officer (COO) for a small business focused on growth. He has demonstrated experience in leading complex programs, business development, marketing, finance, change management, and general policy development and implementation. He consults on myriad programs and has supported federal, state, regional coalitions, local governments, and private sector partners in the U.S., Iraq, and Kuwait.\n\nIn addition to his demonstrated real-world practical experience, Mr. Mentler has a bachelor's degree in criminal justice and a master's degree in business administration. This integration of experience with an advanced education has allowed Mr. Mentler to develop, apply, and adapt solutions in a dynamic and evolving business and operational environment, across infrastructure sectors. Most importantly, he is customer centered and focused on delivering the best value in every business relationship."
+  },
+  {
     name: "Melissa Harris Tate",
     title: "Director, Business Development & Capture Management",
     image: melissaPhoto,
@@ -39,12 +51,6 @@ const leaders = [
     title: "Program Manager \u2013 Qatar",
     image: vivekPhoto,
     bio: "Vivek Krishnamoorthy is a senior construction and infrastructure executive with over 15 years of progressive leadership experience delivering complex, high-value civil and infrastructure programs across Qatar and India. As Program Manager \u2013 Qatar, he provides executive oversight of multiple concurrent projects within mission-critical, high-security, and U.S. government-supported environments. His leadership is grounded in disciplined execution, operational accountability, and performance-driven results across technically demanding markets.\n\nIn his current role, Vivek directs end-to-end program operations from strategic planning and preconstruction through execution and closeout. He leads financial governance, procurement strategy, subcontractor management, contract administration, regulatory coordination, and stakeholder engagement to ensure projects are delivered safely, on schedule, and within budget.\n\nVivek has successfully delivered major infrastructure programs including underground metro stations, mega water reservoirs, high-capacity pumping stations, backup power facilities, and integrated utility networks. His technical expertise encompasses large-scale excavation, diaphragm wall systems, deep piling operations, waterproof concrete structures, GRP/HDPE/carbon steel pipeline installations, and comprehensive civil infrastructure works.\n\nThroughout his career, Vivek has demonstrated strong capabilities in budgeting, forecasting, cost control, competitive bidding, contract negotiation, and schedule optimization. He applies structured reporting frameworks and proactive risk mitigation strategies to improve predictability and operational maturity across project portfolios.\n\nCombining engineering execution expertise with program-level strategic oversight, Vivek operates effectively at the intersection of field operations and executive leadership. His focus remains on expanding operational excellence in Qatar, strengthening client partnerships, and delivering resilient infrastructure solutions that support mission objectives and long-term organizational growth."
-  },
-  {
-    name: "Stephan Mentler",
-    title: "Chief Operations Officer (COO)",
-    image: stephanPhoto,
-    bio: "A former soldier and first responder, Mr. Mentler possesses more than 30 years of experience across disciplines and industries. While focused on threat management policy, analysis, and planning for terrestrial and maritime, conventional and Chemical Biological Radiological Nuclear and Explosive (CBRNE) threats, he has been a Chief Operating Officer (COO) for a small business focused on growth. He has demonstrated experience in leading complex programs, business development, marketing, finance, change management, and general policy development and implementation. He consults on myriad programs and has supported federal, state, regional coalitions, local governments, and private sector partners in the U.S., Iraq, and Kuwait.\n\nIn addition to his demonstrated real-world practical experience, Mr. Mentler has a bachelor's degree in criminal justice and a master's degree in business administration. This integration of experience with an advanced education has allowed Mr. Mentler to develop, apply, and adapt solutions in a dynamic and evolving business and operational environment, across infrastructure sectors. Most importantly, he is customer centered and focused on delivering the best value in every business relationship."
   }
 ];
 
@@ -82,8 +88,13 @@ export default function Leadership() {
             The experienced professionals driving G&E Industrial Supplies' mission to deliver turnkey solutions for global readiness.
           </motion.p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-16">
-            {leaders.map((leader, index) => (
+          <h2 className="text-xl md:text-2xl font-display font-bold text-white/80 mb-8 tracking-wider border-b border-white/10 pb-3">
+            EXECUTIVE LEADERSHIP
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-16 mb-16">
+            {leaderCategories.executive.map((index) => leaders[index]).map((leader, fi) => {
+              const index = leaderCategories.executive[fi];
+              return (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
@@ -123,8 +134,66 @@ export default function Leadership() {
                   READ MORE
                 </button>
               </motion.div>
-            ))}
+              );
+            })}
           </div>
+
+          {[
+            { label: "ADMINISTRATIVE", indices: leaderCategories.administrative },
+            { label: "ENGINEERS", indices: leaderCategories.engineers },
+          ].map((section) => (
+            <div key={section.label}>
+              <h2 className="text-xl md:text-2xl font-display font-bold text-white/80 mb-8 tracking-wider border-b border-white/10 pb-3">
+                {section.label}
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-16 mb-16">
+                {section.indices.map((index) => {
+                  const leader = leaders[index];
+                  return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.1 * index }}
+                    className="flex flex-col items-center text-center"
+                    data-testid={`card-leader-${index}`}
+                  >
+                    <div className="w-44 h-44 md:w-52 md:h-52 rounded-full overflow-hidden mb-6 border-4 border-white/10 bg-slate-700">
+                      {leader.image ? (
+                        <img
+                          src={leader.image}
+                          alt={leader.name}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center bg-slate-600">
+                          <span className="text-white/40 text-4xl md:text-5xl font-display font-bold">
+                            {leader.name.split(" ").map(n => n[0]).join("")}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+
+                    <h3 className="text-white font-display font-bold text-xl md:text-2xl mb-1" data-testid={`text-leader-name-${index}`}>
+                      {leader.name}
+                    </h3>
+                    <p className="text-white/50 text-sm md:text-base mb-4" data-testid={`text-leader-title-${index}`}>
+                      {leader.title}
+                    </p>
+
+                    <button
+                      onClick={() => setSelectedLeader(index)}
+                      className="border border-white/40 text-white/80 hover:text-white hover:border-white px-6 py-2 text-xs tracking-widest font-semibold transition-colors duration-200"
+                      data-testid={`button-read-more-${index}`}
+                    >
+                      READ MORE
+                    </button>
+                  </motion.div>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
