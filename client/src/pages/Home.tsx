@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { CheckCircle, ArrowRight } from "lucide-react";
-import Footer from "@/components/Footer";
+import { Footer } from "@/components/Footer";
 import ajithPhoto from "@assets/Ajith-Photo_1771271267641.jpg";
 import johnPaulPhoto from "@assets/John_Paul_Vice_President_1771271267642.png";
 import melissaPhoto from "@assets/Melissa_Tate__1771271267643.jpg";
