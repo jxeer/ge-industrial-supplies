@@ -21,10 +21,12 @@ This is a marketing website for G&E Industrial Supplies, Inc., a HUBZone-certifi
 - **Contract Vehicles**: 5 vehicles with NAICS codes section, GSA as Pending (yellow), Great Lakes Naval-AC-PRI / Vectrus attribution
 - **Contact**: Contact form
 
-## Leadership Team (6 members)
-- **Executive**: Ajith K. Nair (CEO), John Paul (VP), David Banks (VP), Stephan Mentler (COO)
-- **Administrative**: Melissa Harris Tate (Lead Director, BD & Capture)
-- **Engineers**: Vivek Krishnamoorthy (Program Manager – Qatar)
+## Leadership Team (12 members, 5 sections)
+- **Executive Leadership**: Ajith K. Nair (President & COO), John Paul (VP Global Sales), David Banks (VP Mission Operations)
+- **Government Contracts**: Melissa Harris Tate (Lead Director, BD & Capture), Stephan Mentler (Director, Civil Solutions)
+- **Engineering**: Vivek Krishnamoorthy (Civil Engineer & Program Manager), Muhammed Jishad (QA / Civil Engineer)
+- **Global Sales and Services (OCONUS)**: Prakash Gopi (GM, Middle East Operations), Merna Almekkawi (Sales & Marketing Engineer)
+- **Domestic Sales and Services (CONUS)**: Jeffery Bell (Senior Sales Manager), Eric Bach (Senior Sales Representative), Brandy Hardin (HR & Administration Manager)
 
 ## User Preferences
 
