@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { CheckCircle, ArrowRight } from "lucide-react";
+import Footer from "@/components/Footer";
 import ajithPhoto from "@assets/Ajith-Photo_1771271267641.jpg";
 import johnPaulPhoto from "@assets/John_Paul_Vice_President_1771271267642.png";
 import melissaPhoto from "@assets/Melissa_Tate__1771271267643.jpg";
@@ -284,22 +285,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="bg-slate-950 border-t border-white/10 py-8">
-        <div className="max-w-6xl mx-auto px-6 flex flex-wrap justify-between items-center gap-6">
-          <div className="flex items-center gap-2">
-            <svg className="w-8 h-8 text-white/60" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97 0-.33-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1 0 .33.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1.01c.52.4 1.06.74 1.69.99l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1.01c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.66Z"/>
-            </svg>
-            <span className="text-white/60 text-sm font-display font-bold">G&E Industrial Supplies, Inc.</span>
-          </div>
-          <div className="flex flex-wrap gap-6 text-white/40 text-xs">
-            <span>CAGE: 711V1</span>
-            <span>UEI: G8CXJ2PMKN76</span>
-            <span>Bonding: $30M Single / $100M Aggregate</span>
-          </div>
-          <p className="text-white/30 text-xs">&copy; {new Date().getFullYear()} All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
