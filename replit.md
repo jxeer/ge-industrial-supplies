@@ -23,7 +23,7 @@ This is a marketing website for G&E Industrial Supplies, Inc., a HUBZone-certifi
 
 ## Leadership Team (6 members)
 - **Executive**: Ajith K. Nair (CEO), John Paul (VP), David Banks (VP), Stephan Mentler (COO)
-- **Administrative**: Melissa Harris Tate (Director, BD & Capture)
+- **Administrative**: Melissa Harris Tate (Lead Director, BD & Capture)
 - **Engineers**: Vivek Krishnamoorthy (Program Manager – Qatar)
 
 ## User Preferences

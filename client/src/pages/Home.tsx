@@ -35,7 +35,7 @@ const contractVehicles = [
 const leadershipPreview = [
   { name: "Ajith K. Nair", title: "President & CEO", image: ajithPhoto },
   { name: "John Paul", title: "VP, Federal Programs", image: johnPaulPhoto },
-  { name: "Melissa Harris Tate", title: "Director, BD & Capture", image: melissaPhoto },
+  { name: "Melissa Harris Tate", title: "Lead Director, BD & Capture", image: melissaPhoto },
 ];
 
 export default function Home() {
