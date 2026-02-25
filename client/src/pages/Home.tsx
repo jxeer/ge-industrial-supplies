@@ -27,10 +27,10 @@ const missionOutcomes = [
 ];
 
 const contractVehicles = [
-  { name: "LOGCAP V", agency: "U.S. Army / ACC-RI" },
+  { name: "LOGCAP V", agency: "U.S. Army / ACC-RI / Vectrus Systems Corporation" },
   { name: "GSA Schedule", agency: "General Services Administration", pending: true },
   { name: "USACE MATOC", agency: "USACE - Middle East District" },
-  { name: "DLA Tailored Logistics Support", agency: "Defense Logistics Agency" },
+  { name: "DLA Tailored Logistics Support", agency: "Defense Logistics Agency / Vectrus Systems Corporation" },
 ];
 
 const leadershipPreview = [

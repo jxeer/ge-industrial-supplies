@@ -16,7 +16,7 @@ const contractVehicles = [
   {
     name: "LOGCAP V",
     fullName: "Logistics Civil Augmentation Program V",
-    agency: "U.S. Army / ACC-RI",
+    agency: "U.S. Army / ACC-RI / Vectrus Systems Corporation",
     description: "Multiple award task order contract for comprehensive base operations support, facility maintenance, life support services, and construction retrofitting at military installations worldwide. Scope includes building modifications, infrastructure adaptation for housing rescuees, and facility retrofitting in support of contingency operations. G&E has successfully executed 40+ task orders under LOGCAP.",
     naics: ["561210", "561720", "562111", "236220"],
     status: "Active"
@@ -40,7 +40,7 @@ const contractVehicles = [
   {
     name: "DLA Tailored Logistics Support",
     fullName: "Defense Logistics Agency - Tailored Logistics Support",
-    agency: "Defense Logistics Agency",
+    agency: "Defense Logistics Agency / Vectrus Systems Corporation",
     description: "Contract vehicle for specialized wholesale distribution of industrial supplies, machinery, and equipment to Department of Defense customers worldwide.",
     naics: ["423840", "423440"],
     status: "Active"
