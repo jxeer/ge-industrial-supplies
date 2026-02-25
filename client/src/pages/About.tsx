@@ -1,27 +1,38 @@
 import { motion } from "framer-motion";
-import { Shield, Globe, Target, Award } from "lucide-react";
+import { DollarSign, Users, Wrench, CheckCircle } from "lucide-react";
 
-const pillars = [
+const coreStrengths = [
   {
-    icon: Shield,
-    title: "Mission-Focused Execution",
-    description: "Every engagement is driven by mission requirements, compliance standards, and measurable performance outcomes aligned with federal acquisition frameworks."
+    icon: DollarSign,
+    title: "Competitive Pricing",
+    description: "G&E delivers exceptional value through disciplined estimating, strong supplier relationships, and efficient project execution. Our internal estimating team ensures accurate forecasting, cost control, and pricing strategies that keep our clients competitive without sacrificing quality or performance."
   },
   {
-    icon: Globe,
-    title: "Global Operational Footprint",
-    description: "Active presence across CONUS and OCONUS environments, including the Middle East, supporting military installations and federal facilities worldwide."
+    icon: Users,
+    title: "Skilled Workers",
+    description: "Our team is composed of experienced professionals who understand mission-driven environments. From field operations to executive oversight, G&E deploys a workforce that is trained, responsive, and performance-focused."
   },
   {
-    icon: Target,
-    title: "Reliability-Centered Methodology",
-    description: "Our approach prioritizes preventive maintenance, lifecycle sustainment, and operational continuity to reduce cost of ownership and maximize asset readiness."
-  },
-  {
-    icon: Award,
-    title: "Regulatory Compliance & Accountability",
-    description: "Full alignment with FAR-based contracting, federal procurement standards, quality management systems, and ethical business governance across all operations."
+    icon: Wrench,
+    title: "In-House Technical Capabilities",
+    description: "Our internal capability allows us to manage projects end-to-end — reducing risk, improving quality control, and ensuring schedule adherence.",
+    capabilities: [
+      "Engineers",
+      "Program Managers",
+      "Project Managers",
+      "Estimating Specialists",
+      "Project Superintendents"
+    ]
   }
+];
+
+const pastPerformance = [
+  "Building renovations",
+  "HVAC and mechanical upgrades",
+  "Engineering services",
+  "Operations & Maintenance (O&M)",
+  "Material Handling Equipment (MHE) support and lifecycle management",
+  "Comprehensive facility support"
 ];
 
 export default function About() {
@@ -45,7 +56,7 @@ export default function About() {
             className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 tracking-tight"
             data-testid="heading-company-overview"
           >
-            COMPANY OVERVIEW
+            ABOUT G&E INDUSTRIAL SUPPLIES
           </motion.h1>
 
           <motion.div
@@ -56,42 +67,37 @@ export default function About() {
           >
             <div className="max-w-3xl space-y-6 text-white/70 text-base md:text-lg leading-relaxed">
               <p>
-                G&E Industrial Supplies, Inc. is an SBA HUBZone-certified small business headquartered in El Paso, Texas. We provide integrated facility support, operations & maintenance (O&M), industrial supply, logistics, construction, and environmental services to federal agencies, Department of Defense installations, prime contractors, and commercial operations worldwide.
+                Established in 1989, G&E Industrial Supplies Inc. is a trusted industrial supplier and service provider delivering cost-effective, technically sound solutions to government and commercial clients worldwide. Headquartered in El Paso, Texas, with subsidiaries in Doha, Qatar and Kuwait, G&E supports operations across the U.S. and international markets.
               </p>
-              <p>
-                Founded on principles of integrity, operational discipline, and mission-focused execution, G&E has built a reputation for dependable performance in demanding environments. Our team brings decades of combined experience in government contracting, facility support services, construction management, and technical services delivery.
-              </p>
-              <p>
-                We operate within structured federal acquisition frameworks, maintaining full compliance with FAR-based procurement standards, quality management protocols, and regulatory requirements. Our experience spans IDIQ, MATOC, SATOC, and SABER contract vehicles, with a demonstrated ability to execute task orders efficiently and to standard.
-              </p>
-              <p>
-                G&E has delivered recurring facilities supply at Fort Bliss, TX and CARE Doha, Qatar (DoD Southwest) as a partner to Pride Industries and SOS International, providing filters, facilities parts, and laundry equipment spares. Additionally, under equipment leasing and logistics support contracts at CARE Doha and Camp Arifjan, G&E has supported renovations, construction, leased vehicles and heavy equipment, tower lights, custodial services, ablution units, relocations, and the supply of tools and spares in partnership with SOS International LLC and Vectrus Systems Corporation.
+              <p className="text-white/90 font-semibold text-lg md:text-xl">
+                For more than 30 years, our success has been built on three core strengths:
               </p>
             </div>
           </motion.div>
 
-          <motion.h2
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-2xl md:text-3xl font-display font-bold text-white mb-10 tracking-tight"
-          >
-            OPERATIONAL PHILOSOPHY
-          </motion.h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            {pillars.map((pillar, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            {coreStrengths.map((strength, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
                 className="border border-white/10 rounded-md p-6 bg-white/5"
-                data-testid={`card-pillar-${index}`}
+                data-testid={`card-strength-${index}`}
               >
-                <pillar.icon className="w-8 h-8 text-cyan-400 mb-4" />
-                <h3 className="text-white font-display font-bold text-lg mb-3">{pillar.title}</h3>
-                <p className="text-white/60 text-sm leading-relaxed">{pillar.description}</p>
+                <strength.icon className="w-8 h-8 text-cyan-400 mb-4" />
+                <h3 className="text-white font-display font-bold text-lg mb-3">{strength.title}</h3>
+                <p className="text-white/60 text-sm leading-relaxed">{strength.description}</p>
+                {strength.capabilities && (
+                  <ul className="mt-4 space-y-2">
+                    {strength.capabilities.map((cap, i) => (
+                      <li key={i} className="flex items-center gap-2 text-white/70 text-sm">
+                        <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full shrink-0" />
+                        {cap}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </motion.div>
             ))}
           </div>
@@ -99,10 +105,54 @@ export default function About() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="border-t border-white/10 pt-10 space-y-8"
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="border-t border-white/10 pt-10 mb-16"
           >
-            <h2 className="text-2xl md:text-3xl font-display font-bold text-white tracking-tight">
+            <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-6 tracking-tight">
+              PROVEN PERFORMANCE IN COMPLEX ENVIRONMENTS
+            </h2>
+            <div className="max-w-3xl space-y-6 text-white/70 text-base md:text-lg leading-relaxed mb-8">
+              <p>
+                G&E has executed multiple award task orders, including renovation and facility modernization projects at Camp As Sayliyah (CARE Doha Military Installation). Our past performance includes:
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+              {pastPerformance.map((item, i) => (
+                <div key={i} className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-md px-4 py-3">
+                  <CheckCircle className="w-4 h-4 text-cyan-400 shrink-0" />
+                  <span className="text-white/80 text-sm">{item}</span>
+                </div>
+              ))}
+            </div>
+            <p className="max-w-3xl text-white/70 text-base md:text-lg leading-relaxed">
+              Our ability to perform under large contract vehicles — while maintaining disciplined cost management and high-performance ratings — demonstrates the strength of our workforce and operational systems.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="border-t border-white/10 pt-10 mb-16"
+          >
+            <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-6 tracking-tight">
+              OUR COMMITMENT
+            </h2>
+            <p className="max-w-3xl text-white/70 text-base md:text-lg leading-relaxed mb-8">
+              At G&E, our commitment is grounded in delivering competitive and transparent pricing while maintaining the highest standards of technical accuracy. We execute every project with disciplined schedule management to ensure reliability and mission continuity, and we operate with an uncompromising focus on safety and regulatory compliance. Above all, we prioritize building long-term client partnerships founded on trust, performance, and consistent value delivery.
+            </p>
+            <p className="text-white/90 font-display font-bold text-lg italic">
+              At G&E, performance is not a slogan — it is our standard.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="border-t border-white/10 pt-10 mb-16"
+          >
+            <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-6 tracking-tight">
               CERTIFICATIONS & QUALIFICATIONS
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -125,8 +175,8 @@ export default function About() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-            className="mt-12 pt-8 border-t border-white/10 flex flex-wrap gap-8 items-center"
+            transition={{ duration: 0.6, delay: 0.8 }}
+            className="border-t border-white/10 pt-8 flex flex-wrap gap-8 items-center"
           >
             <div>
               <span className="text-white/40 text-xs uppercase tracking-wider">CAGE Code</span>
