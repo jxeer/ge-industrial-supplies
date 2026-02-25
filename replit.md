@@ -9,7 +9,7 @@ This is a marketing website for G&E Industrial Supplies, Inc., a HUBZone-certifi
 - **CAGE Code**: 711V1
 - **Bonding**: $30M Single / $100M Aggregate
 - **Headquarters**: El Paso, TX
-- **Contact Email**: mtate@gbs-web.com (pending update to Jeff's email once confirmed)
+- **Contact Email**: info@geindustrial.com
 - **GSA Schedule Status**: Pending (not Active)
 - **Middle East contracts**: Attributed to Vectrus Systems Corporation as prime
 

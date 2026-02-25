@@ -63,8 +63,7 @@ export default function Capabilities() {
                 <p>Company: G&E Industrial Supplies, Inc.</p>
                 <p>Corporation Type: Corp</p>
                 <p>SBA Status: HUBZone</p>
-                <p>Primary Contact: Melissa Tate</p>
-                <p>Email: mtate@gbs-web.com</p>
+                <p>Email: info@geindustrial.com</p>
                 <p>Headquarters:</p>
                 <p>857 Pendale Rd. El Paso, Tx 79907</p>
                 <p>40+ task orders executed under LOGCAP</p>

@@ -111,9 +111,8 @@ export default function Contact() {
                   <p>El Paso, TX 79907</p>
                 </div>
                 <div>
-                  <p className="text-white/60 text-xs uppercase tracking-wider mb-1">Primary Contact</p>
-                  <p>Melissa Tate</p>
-                  <p>mtate@gbs-web.com</p>
+                  <p className="text-white/60 text-xs uppercase tracking-wider mb-1">Email</p>
+                  <p>info@geindustrial.com</p>
                 </div>
                 <div>
                   <p className="text-white/60 text-xs uppercase tracking-wider mb-1">SBA Status</p>
