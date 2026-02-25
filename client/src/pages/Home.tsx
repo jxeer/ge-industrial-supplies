@@ -98,19 +98,22 @@ export default function Home() {
 
         <div className="relative z-20 pb-4">
           <div className="flex justify-center">
-            <motion.div
+            <motion.button
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 1.2 }}
-              className="animate-bounce text-white/40"
+              className="animate-bounce text-white/40 hover:text-white/70 transition-colors cursor-pointer"
+              onClick={() => document.getElementById("capabilities")?.scrollIntoView({ behavior: "smooth" })}
+              aria-label="Scroll to next section"
+              data-testid="button-scroll-down"
             >
               <ArrowRight className="w-6 h-6 rotate-90" />
-            </motion.div>
+            </motion.button>
           </div>
         </div>
       </div>
 
-      <section className="relative bg-slate-900 py-20 md:py-28">
+      <section id="capabilities" className="relative bg-slate-900 py-20 md:py-28">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
