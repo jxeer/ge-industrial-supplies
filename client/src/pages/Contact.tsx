@@ -112,7 +112,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-white/60 text-xs uppercase tracking-wider mb-1">Email</p>
-                  <p>info@geindustrial.com</p>
+                  <p>info@geindustrialsupplies.com</p>
                 </div>
                 <div>
                   <p className="text-white/60 text-xs uppercase tracking-wider mb-1">SBA Status</p>
