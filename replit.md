@@ -31,6 +31,7 @@ This is a marketing website for G&E Industrial Supplies, Inc., a HUBZone-certifi
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
+Code style: Always include comments in code — comment sections, functions, logic, and key data structures for clarity and maintainability.
 
 ## System Architecture
 
