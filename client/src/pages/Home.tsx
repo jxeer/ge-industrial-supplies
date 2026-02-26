@@ -1,11 +1,36 @@
+/**
+ * Home.tsx - Homepage / Landing Page
+ *
+ * The main entry point visitors see when arriving at the G&E website.
+ * Features a full-screen hero with space imagery, credential strip,
+ * scrolling sections for capabilities, contract vehicles, and leadership.
+ *
+ * Sections:
+ * - Hero: Full-screen background with tagline, CTA, and credentials
+ * - Mission Support: Key mission outcomes grid
+ * - Core Capabilities: 10-item grid of service areas
+ * - Contract Vehicles: Preview of active/pending contracts
+ * - Executive Leadership: Photo preview of key leaders
+ * - Footer: Shared site-wide footer component
+ *
+ * Route: /
+ */
+
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { CheckCircle, ArrowRight } from "lucide-react";
 import { Footer } from "@/components/Footer";
+
+/* Leadership headshot photo imports */
 import ajithPhoto from "@assets/Ajith-Photo_1771271267641.jpg";
 import johnPaulPhoto from "@assets/John_Paul_Vice_President_1771271267642.png";
 import melissaPhoto from "@assets/Melissa_Tate__1771271267643.jpg";
 
+/**
+ * Core Capabilities List
+ * 10 service areas displayed in the capabilities grid.
+ * Aligned with federal contracting terminology.
+ */
 const capabilities = [
   "Facilities Engineering & Management",
   "Operations & Maintenance (O&M) Services",
@@ -19,6 +44,10 @@ const capabilities = [
   "Physical Security & Installation Support Services",
 ];
 
+/**
+ * Mission Outcomes
+ * Key value propositions displayed with checkmark icons.
+ */
 const missionOutcomes = [
   "Increase operational reliability",
   "Reduce lifecycle cost of ownership",
@@ -26,6 +55,12 @@ const missionOutcomes = [
   "Sustain and enhance mission readiness",
 ];
 
+/**
+ * Contract Vehicles Preview
+ * Subset of active contract vehicles shown on the homepage.
+ * GSA Schedule marked as "Pending" with yellow badge styling.
+ * Vectrus Systems Corporation listed as prime on LOGCAP V and DLA.
+ */
 const contractVehicles = [
   { name: "LOGCAP V", agency: "U.S. Army / ACC-RI / Vectrus Systems Corporation" },
   { name: "GSA Schedule", agency: "General Services Administration", pending: true },
@@ -33,17 +68,35 @@ const contractVehicles = [
   { name: "DLA Tailored Logistics Support", agency: "Defense Logistics Agency / Vectrus Systems Corporation" },
 ];
 
+/**
+ * Leadership Preview
+ * Three key leaders shown on homepage in alphabetical order.
+ * Links to full Leadership page for complete team listing.
+ */
 const leadershipPreview = [
   { name: "Ajith K. Nair", title: "President & COO", image: ajithPhoto },
   { name: "John Paul", title: "VP, Global Sales", image: johnPaulPhoto },
   { name: "Melissa Harris Tate", title: "Lead Director, BD & Capture", image: melissaPhoto },
 ];
 
+/**
+ * Home Component
+ *
+ * Renders the full landing page with all sections.
+ * Uses Framer Motion for scroll-triggered animations.
+ * Homepage uses transparent Navbar (overlay on hero image).
+ */
 export default function Home() {
   return (
     <div className="relative bg-black">
 
+      {/* ================================================================
+          HERO SECTION
+          Full-screen background with earth-from-space imagery,
+          company tagline, CTA button, and credentials strip.
+          ================================================================ */}
       <div className="relative min-h-screen flex flex-col">
+        {/* Background image with gradient overlays */}
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=2072&auto=format&fit=crop"
@@ -54,6 +107,7 @@ export default function Home() {
           <div className="absolute bottom-[30%] left-0 right-0 h-40 bg-gradient-to-t from-cyan-400/30 via-cyan-500/15 to-transparent blur-2xl" />
         </div>
 
+        {/* Hero content: tagline, subtitle, CTA, credentials */}
         <div className="relative z-20 flex-1 flex flex-col items-center justify-center text-center px-4 pt-24">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -61,16 +115,19 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl"
           >
+            {/* Main headline */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-tight mb-8 tracking-tight italic">
               DELIVERING TURNKEY<br />
               SOLUTIONS FOR<br />
               GLOBAL READINESS
             </h1>
 
+            {/* Subtitle description */}
             <p className="text-base md:text-lg text-slate-200 mb-10 max-w-2xl mx-auto leading-relaxed">
               HUBZone-certified small business enabling DoD readiness through integrated facility support, operations & maintenance, industrial logistics, and environmental services worldwide.
             </p>
 
+            {/* Primary CTA button */}
             <Link href="/contact">
               <button
                 className="px-10 py-4 border-2 border-white text-white font-semibold text-sm tracking-wider hover:bg-white hover:text-black transition-all"
@@ -80,6 +137,7 @@ export default function Home() {
               </button>
             </Link>
 
+            {/* Credentials strip: UEI, CAGE, Bonding */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -96,6 +154,7 @@ export default function Home() {
           </motion.div>
         </div>
 
+        {/* Scroll-down arrow button - smooth scrolls to capabilities section */}
         <div className="relative z-20 pb-4">
           <div className="flex justify-center">
             <motion.button
@@ -113,6 +172,10 @@ export default function Home() {
         </div>
       </div>
 
+      {/* ================================================================
+          MISSION SUPPORT SECTION
+          Key mission outcomes displayed as a checklist grid.
+          ================================================================ */}
       <section id="capabilities" className="relative bg-slate-900 py-20 md:py-28">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
@@ -129,6 +192,7 @@ export default function Home() {
             </p>
           </motion.div>
 
+          {/* Mission outcomes grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
             {missionOutcomes.map((outcome, i) => (
               <motion.div
@@ -148,6 +212,10 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ================================================================
+          CORE CAPABILITIES SECTION
+          Grid of 10 service capability areas with link to full services page.
+          ================================================================ */}
       <section className="relative bg-slate-950 py-20 md:py-28">
         <div className="max-w-6xl mx-auto px-6">
           <motion.h2
@@ -161,6 +229,7 @@ export default function Home() {
             CORE CAPABILITIES
           </motion.h2>
 
+          {/* Capabilities grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {capabilities.map((cap, i) => (
               <motion.div
@@ -177,6 +246,7 @@ export default function Home() {
             ))}
           </div>
 
+          {/* Link to full services page */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -193,6 +263,11 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ================================================================
+          CONTRACT VEHICLES SECTION
+          Preview of active contract vehicles with status badges.
+          GSA Schedule shown as "Pending" in yellow.
+          ================================================================ */}
       <section className="relative bg-slate-900 py-20 md:py-28">
         <div className="max-w-6xl mx-auto px-6">
           <motion.h2
@@ -215,6 +290,7 @@ export default function Home() {
             G&E operates within structured federal contracting environments with demonstrated experience in FAR-based acquisition, task order execution, and procurement under IDIQ, MATOC, SATOC, and SABER contract vehicles.
           </motion.p>
 
+          {/* Contract vehicles grid with pending/active status badges */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
             {contractVehicles.map((cv, i) => (
               <motion.div
@@ -228,6 +304,7 @@ export default function Home() {
               >
                 <div className="flex items-center gap-3">
                   <h3 className="text-white font-display font-bold text-lg">{cv.name}</h3>
+                  {/* Yellow "Pending" badge for GSA Schedule */}
                   {'pending' in cv && cv.pending && (
                     <span className="text-yellow-400 text-xs font-semibold tracking-wider border border-yellow-400/30 px-2 py-0.5">Pending</span>
                   )}
@@ -237,6 +314,7 @@ export default function Home() {
             ))}
           </div>
 
+          {/* Link to full contract vehicles page */}
           <Link href="/contract-vehicles">
             <button className="px-8 py-3 border border-white/30 text-white/80 hover:text-white hover:border-white text-sm tracking-wider font-medium transition-all" data-testid="link-contract-vehicles">
               VIEW CONTRACT VEHICLES
@@ -245,6 +323,11 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ================================================================
+          EXECUTIVE LEADERSHIP PREVIEW
+          Photo grid of three key leaders with link to full team page.
+          Displayed in alphabetical order.
+          ================================================================ */}
       <section className="relative bg-slate-950 py-20 md:py-28">
         <div className="max-w-6xl mx-auto px-6">
           <motion.h2
@@ -258,6 +341,7 @@ export default function Home() {
             EXECUTIVE LEADERSHIP
           </motion.h2>
 
+          {/* Leader photo cards */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 mb-10">
             {leadershipPreview.map((leader, i) => (
               <motion.div
@@ -269,6 +353,7 @@ export default function Home() {
                 className="flex flex-col items-center text-center"
                 data-testid={`leader-preview-${i}`}
               >
+                {/* Circular headshot photo */}
                 <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden mb-4 border-4 border-white/10 bg-slate-700">
                   <img src={leader.image} alt={leader.name} className="w-full h-full object-cover" />
                 </div>
@@ -278,6 +363,7 @@ export default function Home() {
             ))}
           </div>
 
+          {/* Link to full leadership page */}
           <div className="text-center">
             <Link href="/leadership">
               <button className="px-8 py-3 border border-white/30 text-white/80 hover:text-white hover:border-white text-sm tracking-wider font-medium transition-all" data-testid="link-meet-leadership">
@@ -288,6 +374,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Shared site-wide footer */}
       <Footer />
     </div>
   );

@@ -1,13 +1,38 @@
+/**
+ * NavbarSolid.tsx - Solid Background Navigation Bar (All Pages Except Homepage)
+ *
+ * Solid dark navbar with a top info bar, used on all pages except
+ * the homepage (which uses the transparent Navbar.tsx instead).
+ *
+ * Features:
+ * - Top bar with CAGE Code and UEI
+ * - Sticky positioning with solid dark background
+ * - Active link highlighting based on current route
+ * - About dropdown with Company Overview and Executive Leadership
+ * - Responsive mobile hamburger menu
+ */
+
 import { Link, useLocation } from "wouter";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 
+/**
+ * NavbarSolid Component
+ *
+ * Named export — import with { NavbarSolid }.
+ * Rendered on all routes except "/" (homepage).
+ */
 export function NavbarSolid() {
+  /* Mobile menu open/close state */
   const [isOpen, setIsOpen] = useState(false);
+  /* About dropdown open/close state */
   const [aboutOpen, setAboutOpen] = useState(false);
+  /* Current route for active link highlighting */
   const [location] = useLocation();
+  /* Ref for click-outside detection on About dropdown */
   const aboutRef = useRef<HTMLDivElement>(null);
 
+  /* Close About dropdown when clicking outside */
   useEffect(() => {
     function handleClick(e: MouseEvent) {
       if (aboutRef.current && !aboutRef.current.contains(e.target as Node)) {
@@ -18,6 +43,7 @@ export function NavbarSolid() {
     return () => document.removeEventListener("mousedown", handleClick);
   }, []);
 
+  /* Navigation links (excluding Home and About, which are handled separately) */
   const links = [
     { href: "/services", label: "Services" },
     { href: "/services/industrial-supply-distribution", label: "Industrial Supply, Logistics & Distribution" },
@@ -26,6 +52,7 @@ export function NavbarSolid() {
 
   return (
     <>
+      {/* Top info bar with CAGE Code and UEI */}
       <div className="bg-slate-800 text-white py-2 text-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center items-center gap-6">
           <span className="font-medium">CAGE Code: 711V1</span>
@@ -34,9 +61,12 @@ export function NavbarSolid() {
         </div>
       </div>
 
+      {/* Main navigation bar - sticky with solid background */}
       <nav className="sticky top-0 z-50 bg-slate-900 border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
+
+            {/* Logo and company name */}
             <div className="flex-shrink-0">
               <Link href="/" className="flex items-center gap-2">
                 <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
@@ -48,11 +78,13 @@ export function NavbarSolid() {
               </Link>
             </div>
 
+            {/* Desktop navigation links with active state highlighting */}
             <div className="hidden md:flex items-center space-x-8">
               <Link href="/" className={`text-sm font-medium transition-colors ${location === "/" ? "text-white" : "text-slate-300 hover:text-white"}`}>
                 Home
               </Link>
 
+              {/* About dropdown with active state for /about and /leadership */}
               <div className="relative" ref={aboutRef}>
                 <button
                   onClick={() => setAboutOpen(!aboutOpen)}
@@ -84,6 +116,7 @@ export function NavbarSolid() {
                 )}
               </div>
 
+              {/* Remaining nav links with active state highlighting */}
               {links.map((link) => (
                 <Link
                   key={link.href}
@@ -97,6 +130,7 @@ export function NavbarSolid() {
               ))}
             </div>
 
+            {/* Mobile menu toggle button */}
             <div className="flex items-center md:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
@@ -109,12 +143,14 @@ export function NavbarSolid() {
           </div>
         </div>
 
+        {/* Mobile menu dropdown */}
         {isOpen && (
           <div className="md:hidden bg-slate-800">
             <div className="px-4 pt-2 pb-6 space-y-1">
               <Link href="/" className="block px-3 py-3 text-white text-base font-medium hover:bg-slate-700 rounded-md transition-colors" onClick={() => setIsOpen(false)}>
                 Home
               </Link>
+              {/* About section label and sub-links */}
               <div className="px-3 py-2 text-slate-400 text-xs uppercase tracking-wider">About</div>
               <Link href="/about" className="block px-6 py-3 text-white text-base font-medium hover:bg-slate-700 rounded-md transition-colors" onClick={() => setIsOpen(false)}>
                 Company Overview
@@ -122,6 +158,7 @@ export function NavbarSolid() {
               <Link href="/leadership" className="block px-6 py-3 text-white text-base font-medium hover:bg-slate-700 rounded-md transition-colors" onClick={() => setIsOpen(false)}>
                 Executive Leadership
               </Link>
+              {/* Remaining nav links */}
               {links.map((link) => (
                 <Link
                   key={link.href}

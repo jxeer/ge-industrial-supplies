@@ -1,6 +1,20 @@
+/**
+ * not-found.tsx - 404 Page Not Found
+ *
+ * Catch-all page displayed when no route matches the current URL.
+ * Shows a simple error card with a message.
+ *
+ * Route: fallback (no matching route)
+ */
+
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertCircle } from "lucide-react";
 
+/**
+ * NotFound Component
+ *
+ * Renders a centered 404 error card.
+ */
 export default function NotFound() {
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-gray-50">

@@ -1,13 +1,38 @@
+/**
+ * Navbar.tsx - Transparent Navigation Bar (Homepage Only)
+ *
+ * Transparent overlay navbar used exclusively on the homepage,
+ * where it floats over the hero background image.
+ * For all other pages, NavbarSolid.tsx is used instead.
+ *
+ * Features:
+ * - Transparent background (overlays hero image)
+ * - G&E logo with company name
+ * - CAGE/UEI display in center (desktop)
+ * - About dropdown with Company Overview and Executive Leadership
+ * - Responsive mobile hamburger menu
+ */
+
 import { Link, useLocation } from "wouter";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 
+/**
+ * Navbar Component
+ *
+ * Named export — import with { Navbar }.
+ * Only rendered when the current route is "/" (homepage).
+ */
 export function Navbar() {
+  /* Mobile menu open/close state */
   const [isOpen, setIsOpen] = useState(false);
+  /* About dropdown open/close state */
   const [aboutOpen, setAboutOpen] = useState(false);
   const [location] = useLocation();
+  /* Ref for click-outside detection on About dropdown */
   const aboutRef = useRef<HTMLDivElement>(null);
 
+  /* Close About dropdown when clicking outside */
   useEffect(() => {
     function handleClick(e: MouseEvent) {
       if (aboutRef.current && !aboutRef.current.contains(e.target as Node)) {
@@ -18,6 +43,7 @@ export function Navbar() {
     return () => document.removeEventListener("mousedown", handleClick);
   }, []);
 
+  /* Navigation links (excluding Home and About, which are handled separately) */
   const links = [
     { href: "/services", label: "Services" },
     { href: "/services/industrial-supply-distribution", label: "Industrial Supply, Logistics & Distribution" },
@@ -29,6 +55,8 @@ export function Navbar() {
       <nav className="absolute top-0 left-0 right-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
+
+            {/* Logo and company name */}
             <div className="flex-shrink-0">
               <Link href="/" className="flex items-center gap-2">
                 <svg className="w-10 h-10 text-white" viewBox="0 0 24 24" fill="currentColor">
@@ -41,17 +69,20 @@ export function Navbar() {
               </Link>
             </div>
 
+            {/* Center: CAGE and UEI identifiers (desktop only) */}
             <div className="hidden md:flex items-center">
               <span className="text-white text-sm font-medium tracking-wide">
                 CAGE Code: 711V1  UEI: G8CXJ2PMKN76
               </span>
             </div>
 
+            {/* Desktop navigation links */}
             <div className="hidden md:flex items-center space-x-8">
               <Link href="/" className="text-white text-sm font-medium hover:text-white/80 transition-colors" data-testid="nav-home">
                 Home
               </Link>
 
+              {/* About dropdown with Company Overview and Leadership links */}
               <div className="relative" ref={aboutRef}>
                 <button
                   onClick={() => setAboutOpen(!aboutOpen)}
@@ -83,6 +114,7 @@ export function Navbar() {
                 )}
               </div>
 
+              {/* Remaining nav links */}
               {links.map((link) => (
                 <Link
                   key={link.href}
@@ -94,6 +126,7 @@ export function Navbar() {
               ))}
             </div>
 
+            {/* Mobile menu toggle button */}
             <div className="flex items-center md:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
@@ -106,15 +139,18 @@ export function Navbar() {
           </div>
         </div>
 
+        {/* Mobile menu dropdown */}
         {isOpen && (
           <div className="md:hidden bg-slate-900/95 backdrop-blur-sm">
             <div className="px-4 pt-2 pb-6 space-y-1">
+              {/* CAGE/UEI identifiers shown in mobile menu */}
               <div className="text-white/60 text-xs text-center py-2 border-b border-white/10 mb-2">
                 CAGE Code: 711V1 | UEI: G8CXJ2PMKN76
               </div>
               <Link href="/" className="block px-3 py-3 text-white text-base font-medium hover:bg-white/10 rounded-md transition-colors" onClick={() => setIsOpen(false)}>
                 Home
               </Link>
+              {/* About section label and sub-links */}
               <div className="px-3 py-2 text-white/50 text-xs uppercase tracking-wider">About</div>
               <Link href="/about" className="block px-6 py-3 text-white text-base font-medium hover:bg-white/10 rounded-md transition-colors" onClick={() => setIsOpen(false)}>
                 Company Overview
@@ -122,6 +158,7 @@ export function Navbar() {
               <Link href="/leadership" className="block px-6 py-3 text-white text-base font-medium hover:bg-white/10 rounded-md transition-colors" onClick={() => setIsOpen(false)}>
                 Executive Leadership
               </Link>
+              {/* Remaining nav links */}
               {links.map((link) => (
                 <Link
                   key={link.href}

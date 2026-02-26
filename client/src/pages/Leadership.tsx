@@ -1,7 +1,29 @@
+/**
+ * Leadership.tsx - Executive Leadership Page
+ *
+ * Displays the full leadership team organized into 5 departmental sections.
+ * Each leader has a circular photo, name, title, and "Read More" button
+ * that opens a modal with their full biography.
+ *
+ * Sections (5 groups, 12 members total):
+ * - Executive Leadership: Ajith (President & COO), John Paul (VP Global Sales), David Banks (VP Mission Ops)
+ * - Government Contracts: Melissa Harris Tate (Lead Director, BD & Capture), Stephan Mentler (Director, Civil Solutions)
+ * - Engineering: Vivek Krishnamoorthy (Civil Engineer & PM), Muhammed Jishad (QA / Civil Engineer)
+ * - Global Sales and Services (OCONUS): Prakash Gopi (GM, Middle East), Merna Almekkawi (Sales & Marketing Engineer)
+ * - Domestic Sales and Services (CONUS): Jeffery Bell (Senior Sales Mgr), Eric Bach (Senior Sales Rep), Brandy Hardin (HR & Admin Mgr)
+ *
+ * Leader indices in the array: 0=Ajith, 1=John Paul, 2=David Banks, 3=Melissa,
+ * 4=Stephan, 5=Vivek, 6=Muhammed, 7=Prakash, 8=Merna, 9=Jeffery, 10=Eric, 11=Brandy
+ *
+ * Route: /leadership
+ */
+
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Link } from "wouter";
 import { X } from "lucide-react";
+
+/* Leadership headshot photo imports */
 import ajithPhoto from "@assets/Ajith-Photo_1771271267641.jpg";
 import johnPaulPhoto from "@assets/John_Paul_Vice_President_1771271267642.png";
 import davidBanksPhoto from "@assets/Screenshot_2026-02-16_at_2.51.02_PM_1771271514254.png";
@@ -14,6 +36,12 @@ import mernaPhoto from "@assets/merna_1772059292963.png";
 import ericPhoto from "@assets/eric-bach_1772059292963.png";
 import brandyPhoto from "@assets/hardin_1772059292963.png";
 
+/**
+ * Leader Interface
+ *
+ * Data structure for each leadership team member.
+ * Image can be null (shows initials fallback instead).
+ */
 interface Leader {
   name: string;
   title: string;
@@ -21,6 +49,14 @@ interface Leader {
   bio: string;
 }
 
+/**
+ * Leaders Data Array
+ *
+ * Complete list of all 12 leadership team members with their
+ * name, title, headshot photo, and full biography text.
+ * Bios support paragraph breaks via \n\n which are rendered
+ * as separate <p> elements in the bio modal.
+ */
 const leaders: Leader[] = [
   {
     name: "Ajith K. Nair",
@@ -96,6 +132,12 @@ const leaders: Leader[] = [
   },
 ];
 
+/**
+ * Section Definitions
+ *
+ * Maps department labels to indices in the leaders array.
+ * Each section renders as a labeled group with its own heading.
+ */
 const sections = [
   { label: "EXECUTIVE LEADERSHIP", indices: [0, 1, 2] },
   { label: "GOVERNMENT CONTRACTS", indices: [3, 4] },
@@ -104,7 +146,15 @@ const sections = [
   { label: "DOMESTIC SALES AND SERVICES (CONUS)", indices: [9, 10, 11] },
 ];
 
+/**
+ * Leadership Component
+ *
+ * Renders the full leadership page with section headings,
+ * leader photo cards, and a bio modal overlay.
+ * Uses Framer Motion for entrance animations.
+ */
 export default function Leadership() {
+  /* Index of currently selected leader for bio modal (null = closed) */
   const [selectedLeader, setSelectedLeader] = useState<number | null>(null);
 
   return (

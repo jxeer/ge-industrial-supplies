@@ -1,6 +1,30 @@
+/**
+ * About.tsx - Company Overview / About Us Page
+ *
+ * Displays G&E Industrial Supplies' company background, core strengths,
+ * past performance record, commitment statement, and certifications.
+ * Content aligned with the client-provided "About Us Revised" document.
+ *
+ * Sections:
+ * - Company intro (established 1989, El Paso HQ, Qatar/Kuwait subsidiaries)
+ * - Three Core Strengths cards (Pricing, Workers, Technical Capabilities)
+ * - Proven Performance (Camp As Sayliyah / CARE Doha projects)
+ * - Our Commitment statement
+ * - Certifications & Qualifications
+ * - Company data strip (CAGE, UEI, HQ)
+ *
+ * Route: /about
+ */
+
 import { motion } from "framer-motion";
 import { DollarSign, Users, Wrench, CheckCircle } from "lucide-react";
 
+/**
+ * Core Strengths Data
+ * Three pillars that define G&E's competitive advantage.
+ * The "In-House Technical Capabilities" card includes a sub-list
+ * of specific roles/disciplines available internally.
+ */
 const coreStrengths = [
   {
     icon: DollarSign,
@@ -26,6 +50,11 @@ const coreStrengths = [
   }
 ];
 
+/**
+ * Past Performance Items
+ * Key service areas demonstrated at Camp As Sayliyah (CARE Doha).
+ * Displayed as a checklist grid under the Proven Performance section.
+ */
 const pastPerformance = [
   "Building renovations",
   "HVAC and mechanical upgrades",
@@ -35,9 +64,16 @@ const pastPerformance = [
   "Comprehensive facility support"
 ];
 
+/**
+ * About Component
+ *
+ * Renders the full Company Overview page with animated sections.
+ * Uses Framer Motion for staggered fade-in animations on page load.
+ */
 export default function About() {
   return (
     <div className="relative min-h-screen bg-slate-900 overflow-hidden">
+      {/* Background image with dark overlay */}
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1501466044931-62695aada8e9?q=80&w=2000&auto=format&fit=crop"
@@ -47,8 +83,11 @@ export default function About() {
         <div className="absolute inset-0 bg-black/70" />
       </div>
 
+      {/* Page content */}
       <div className="relative z-10 min-h-screen flex flex-col items-center px-6 py-16 md:py-24">
         <div className="max-w-5xl w-full">
+
+          {/* Page title */}
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -59,6 +98,7 @@ export default function About() {
             ABOUT G&E INDUSTRIAL SUPPLIES
           </motion.h1>
 
+          {/* Company introduction paragraph */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -75,6 +115,10 @@ export default function About() {
             </div>
           </motion.div>
 
+          {/* ============================================================
+              CORE STRENGTHS CARDS
+              Three cards highlighting pricing, workforce, and technical depth.
+              ============================================================ */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {coreStrengths.map((strength, index) => (
               <motion.div
@@ -88,6 +132,7 @@ export default function About() {
                 <strength.icon className="w-8 h-8 text-cyan-400 mb-4" />
                 <h3 className="text-white font-display font-bold text-lg mb-3">{strength.title}</h3>
                 <p className="text-white/60 text-sm leading-relaxed">{strength.description}</p>
+                {/* Sub-list of in-house roles (only for Technical Capabilities card) */}
                 {strength.capabilities && (
                   <ul className="mt-4 space-y-2">
                     {strength.capabilities.map((cap, i) => (
@@ -102,6 +147,11 @@ export default function About() {
             ))}
           </div>
 
+          {/* ============================================================
+              PROVEN PERFORMANCE SECTION
+              Past performance at Camp As Sayliyah (CARE Doha) with
+              a checklist of demonstrated service areas.
+              ============================================================ */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -116,6 +166,7 @@ export default function About() {
                 G&E has executed multiple award task orders, including renovation and facility modernization projects at Camp As Sayliyah (CARE Doha Military Installation). Our past performance includes:
               </p>
             </div>
+            {/* Past performance checklist grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               {pastPerformance.map((item, i) => (
                 <div key={i} className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-md px-4 py-3">
@@ -129,6 +180,10 @@ export default function About() {
             </p>
           </motion.div>
 
+          {/* ============================================================
+              OUR COMMITMENT SECTION
+              Company commitment statement with tagline.
+              ============================================================ */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -141,11 +196,16 @@ export default function About() {
             <p className="max-w-3xl text-white/70 text-base md:text-lg leading-relaxed mb-8">
               At G&E, our commitment is grounded in delivering competitive and transparent pricing while maintaining the highest standards of technical accuracy. We execute every project with disciplined schedule management to ensure reliability and mission continuity, and we operate with an uncompromising focus on safety and regulatory compliance. Above all, we prioritize building long-term client partnerships founded on trust, performance, and consistent value delivery.
             </p>
+            {/* Company tagline */}
             <p className="text-white/90 font-display font-bold text-lg italic">
               At G&E, performance is not a slogan — it is our standard.
             </p>
           </motion.div>
 
+          {/* ============================================================
+              CERTIFICATIONS & QUALIFICATIONS
+              Grid of certification badges and qualifications.
+              ============================================================ */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -172,6 +232,7 @@ export default function About() {
             </div>
           </motion.div>
 
+          {/* Company data strip: CAGE, UEI, Headquarters */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
