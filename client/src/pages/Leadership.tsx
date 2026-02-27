@@ -35,6 +35,7 @@ import prakashPhoto from "@assets/prakash_1772059292964.png";
 import mernaPhoto from "@assets/merna_1772059292963.png";
 import ericPhoto from "@assets/eric-bach_1772059292963.png";
 import brandyPhoto from "@assets/hardin_1772059292963.png";
+import jefferyPhoto from "@assets/Screenshot_2026-02-27_at_5.16.29_PM_1772230608479.png";
 
 /**
  * Leader Interface
@@ -115,7 +116,7 @@ const leaders: Leader[] = [
   {
     name: "Jeffery Bell",
     title: "Senior Sales Manager",
-    image: null,
+    image: jefferyPhoto,
     bio: "Jeffery Bell serves as Senior Sales Manager at G&E Industrial Supplies, Inc., supporting domestic sales operations and client engagement across federal and commercial accounts."
   },
   {

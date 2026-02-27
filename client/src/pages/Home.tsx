@@ -124,7 +124,7 @@ export default function Home() {
 
             {/* Subtitle description */}
             <p className="text-base md:text-lg text-slate-200 mb-10 max-w-2xl mx-auto leading-relaxed">
-              HUBZone-certified small business enabling DoD readiness through integrated facility support, operations & maintenance, industrial logistics, and environmental services worldwide.
+              HUBZone-certified small business enabling DoD readiness through construction, integrated facility support, operations & maintenance, industrial logistics, and environmental services worldwide.
             </p>
 
             {/* Primary CTA button */}
