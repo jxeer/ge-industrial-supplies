@@ -1,16 +1,5 @@
 # G&E Industrial Supplies, Inc. - Corporate Website
 
-A professional corporate website for G&E Industrial Supplies, Inc., a HUBZone-certified small business specializing in facility support, industrial logistics, and environmental services for federal government and private sector clients worldwide.
-
-## Overview
-
-This website showcases G&E's capabilities, services, and company information with a modern, professional design featuring:
-
-- **Immersive full-screen layouts** with high-quality background imagery
-- **Six service verticals** with dedicated detail pages
-- **Contact form** with database persistence
-- **Responsive design** optimized for all devices
-
 ## Tech Stack
 
 ### Frontend
@@ -30,41 +19,6 @@ This website showcases G&E's capabilities, services, and company information wit
 - **Drizzle ORM** - Database toolkit
 - **PostgreSQL** - Relational database
 - **Zod** - Schema validation
-
-## Project Structure
-
-```
-├── client/                   # Frontend application
-│   ├── src/
-│   │   ├── components/       # Reusable UI components
-│   │   │   ├── ui/          # Shadcn component library
-│   │   │   ├── Navbar.tsx   # Transparent overlay navbar (homepage)
-│   │   │   ├── NavbarSolid.tsx  # Solid navbar (other pages)
-│   │   │   └── Footer.tsx   # Site footer
-│   │   ├── pages/           # Page components
-│   │   │   ├── Home.tsx     # Landing page with hero + service panels
-│   │   │   ├── Capabilities.tsx  # Company capabilities statement
-│   │   │   ├── Services.tsx # Services overview grid
-│   │   │   ├── ServicePage.tsx   # Individual service detail pages
-│   │   │   └── Contact.tsx  # Contact form page
-│   │   ├── hooks/           # Custom React hooks
-│   │   ├── lib/             # Utility functions
-│   │   └── App.tsx          # Root component with routing
-│   └── index.html           # HTML entry point
-│
-├── server/                   # Backend application
-│   ├── index.ts             # Server entry point
-│   ├── routes.ts            # API route definitions
-│   ├── storage.ts           # Database access layer
-│   ├── db.ts                # Database connection
-│   └── vite.ts              # Vite middleware integration
-│
-├── shared/                   # Shared code (frontend + backend)
-│   ├── schema.ts            # Database schema + TypeScript types
-│   └── routes.ts            # API route contracts
-│
-└── package.json             # Dependencies and scripts
-```
 
 ## Pages
 
