@@ -14,12 +14,13 @@ This is a marketing website for G&E Industrial Supplies, Inc., a HUBZone-certifi
 - **Middle East contracts**: Attributed to Vectrus Systems Corporation as prime
 
 ## Site Structure
-- **Homepage**: Hero with credentials strip (UEI/CAGE/Bonding), 10-item Core Capabilities grid (includes Construction), Contract Vehicles preview (GSA shown as Pending), Leadership preview
-- **About > Company Overview**: Mission statement with project experience (Fort Bliss, CARE Doha, Camp Arifjan), operational philosophy pillars, certifications
-- **About > Executive Leadership**: 3-section layout (Executive Leadership, Administrative, Engineers)
-- **Services**: 7 service categories aligned to federal terminology
-- **Contract Vehicles**: 5 vehicles with NAICS codes section, GSA as Pending (yellow), Great Lakes Naval-AC-PRI / Vectrus attribution
-- **Contact**: Contact form
+- **Homepage**: Hero with credentials strip (UEI/CAGE/Bonding), 9-item Core Capabilities grid, Contract Vehicles preview (GSA shown as Pending), Leadership preview, Footer
+- **About > Company Overview**: Three core strengths (Pricing, Workers, Technical Capabilities), Proven Performance (Camp As Sayliyah / CARE Doha), Our Commitment, Certifications
+- **About > Executive Leadership**: 5-section layout (Executive Leadership, Government Contracts, US Sales CONUS, Global Sales OCONUS, Engineering) with 12 members
+- **Services**: 6 service categories aligned to federal terminology (Base & Facility Support, Global Logistics, Waste Management, Construction, Industrial Supply, Professional Solutions)
+- **Contract Vehicles**: 5 vehicles with NAICS codes section, GSA as Pending (yellow), Vectrus attribution on LOGCAP V and DLA
+- **Contact**: Contact form with database persistence
+- **Favicon**: Custom SVG gear icon matching navbar logo
 
 ## Leadership Team (12 members, 5 sections)
 - **Executive Leadership**: Ajith K. Nair (President & COO), John Paul (VP Global Sales), David Banks (VP Mission Operations)
