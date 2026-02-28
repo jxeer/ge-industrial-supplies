@@ -79,35 +79,6 @@ Submit a contact form inquiry.
 - `201`: Submission created successfully
 - `400`: Validation error
 
-## Database Schema
-
-### `contact_submissions` Table
-| Column | Type | Description |
-|--------|------|-------------|
-| id | serial | Primary key |
-| name | text | Contact name |
-| email | text | Email address |
-| phone | text | Phone number (optional) |
-| company | text | Company name (optional) |
-| message | text | Inquiry message |
-| createdAt | timestamp | Submission timestamp |
-
-## Development
-
-### Running Locally
-The application runs on port 5000, serving both the frontend and backend.
-
-```bash
-npm run dev
-```
-
-### Database Setup
-The project uses PostgreSQL. Database connection is configured via the `DATABASE_URL` environment variable.
-
-```bash
-npm run db:push   # Push schema changes to database
-```
-
 ## Company Information
 
 **G&E Industrial Supplies, Inc.**
