@@ -96,23 +96,6 @@ Submit a contact form inquiry.
 5. **Specialized Equipment** - Heavy machinery and tactical vehicle deployment
 6. **Professional Solutions** - Technical manpower and HR solutions
 
-## Design System
-
-### Color Palette
-- **Primary:** Slate/Blue industrial tones
-- **Backgrounds:** Dark overlays on imagery (60-70% opacity)
-- **Text:** White/light gray for contrast on dark backgrounds
-
-### Typography
-- **Display Font:** Bold, italic headlines for impact
-- **Body:** Clean, readable sans-serif
-
-### Layout Patterns
-- Full-screen backgrounds with dark overlays
-- Two-column content layouts
-- Centered call-to-action buttons
-- Consistent CAGE Code/UEI footer across pages
-
 ## License
 
 Proprietary - G&E Industrial Supplies, Inc.
