@@ -1,9 +1,5 @@
 # G&E Industrial Supplies Website
 
-## Overview
-
-This is a marketing website for G&E Industrial Supplies, Inc., a HUBZone-certified small business providing facility maintenance, global logistics, environmental management, and construction services to government and defense contractors. The site showcases their capabilities, services, and contact information with a professional industrial/corporate aesthetic.
-
 ## Key Business Data
 - **UEI**: G8CXJ2PMKN76
 - **CAGE Code**: 711V1
@@ -12,15 +8,6 @@ This is a marketing website for G&E Industrial Supplies, Inc., a HUBZone-certifi
 - **Contact Email**: info@geindustrialsupplies.com
 - **GSA Schedule Status**: Pending (not Active)
 - **Middle East contracts**: Attributed to Vectrus Systems Corporation as prime
-
-## Site Structure
-- **Homepage**: Hero with credentials strip (UEI/CAGE/Bonding), 9-item Core Capabilities grid, Contract Vehicles preview (GSA shown as Pending), Leadership preview, Footer
-- **About > Company Overview**: Three core strengths (Pricing, Workers, Technical Capabilities), Proven Performance (Camp As Sayliyah / CARE Doha), Our Commitment, Certifications
-- **About > Executive Leadership**: 5-section layout (Executive Leadership, Government Contracts, US Sales CONUS, Global Sales OCONUS, Engineering) with 12 members
-- **Services**: 6 service categories aligned to federal terminology (Base & Facility Support, Global Logistics, Waste Management, Construction, Industrial Supply, Professional Solutions)
-- **Contract Vehicles**: 5 vehicles with NAICS codes section, GSA as Pending (yellow), Vectrus attribution on LOGCAP V and DLA
-- **Contact**: Contact form with database persistence
-- **Favicon**: Custom SVG gear icon matching navbar logo
 
 ## Leadership Team (12 members, 5 sections)
 - **Executive Leadership**: Ajith K. Nair (President & COO), John Paul (VP Global Sales), David Banks (VP Mission Operations)
