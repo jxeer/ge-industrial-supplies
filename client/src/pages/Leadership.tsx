@@ -8,9 +8,9 @@
  * Sections (5 groups, 12 members total):
  * - Executive Leadership: Ajith (President & COO), John Paul (VP Global Sales), David Banks (VP Mission Ops)
  * - Government Contracts: Melissa Harris Tate (Lead Director, BD & Capture), Stephan Mentler (Director, Civil Solutions)
- * - Engineering: Vivek Krishnamoorthy (Civil Engineer & PM), Muhammed Jishad (QA / Civil Engineer)
+ * - US Sales and Services (CONUS): Jeffery Bell (Senior Sales Mgr), Eric Bach (Senior Sales Rep), Brandy Hardin (HR & Admin Mgr)
  * - Global Sales and Services (OCONUS): Prakash Gopi (GM, Middle East), Merna Almekkawi (Sales & Marketing Engineer)
- * - Domestic Sales and Services (CONUS): Jeffery Bell (Senior Sales Mgr), Eric Bach (Senior Sales Rep), Brandy Hardin (HR & Admin Mgr)
+ * - Engineering: Vivek Krishnamoorthy (Civil Engineer & PM), Muhammed Jishad (QA / Civil Engineer)
  *
  * Leader indices in the array: 0=Ajith, 1=John Paul, 2=David Banks, 3=Melissa,
  * 4=Stephan, 5=Vivek, 6=Muhammed, 7=Prakash, 8=Merna, 9=Jeffery, 10=Eric, 11=Brandy
@@ -142,9 +142,9 @@ const leaders: Leader[] = [
 const sections = [
   { label: "EXECUTIVE LEADERSHIP", indices: [0, 1, 2] },
   { label: "GOVERNMENT CONTRACTS", indices: [3, 4] },
-  { label: "ENGINEERING", indices: [5, 6] },
+  { label: "US SALES AND SERVICES (CONUS)", indices: [9, 10, 11] },
   { label: "GLOBAL SALES AND SERVICES (OCONUS)", indices: [7, 8] },
-  { label: "DOMESTIC SALES AND SERVICES (CONUS)", indices: [9, 10, 11] },
+  { label: "ENGINEERING", indices: [5, 6] },
 ];
 
 /**

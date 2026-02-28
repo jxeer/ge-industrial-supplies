@@ -24,9 +24,9 @@ This is a marketing website for G&E Industrial Supplies, Inc., a HUBZone-certifi
 ## Leadership Team (12 members, 5 sections)
 - **Executive Leadership**: Ajith K. Nair (President & COO), John Paul (VP Global Sales), David Banks (VP Mission Operations)
 - **Government Contracts**: Melissa Harris Tate (Lead Director, BD & Capture), Stephan Mentler (Director, Civil Solutions)
-- **Engineering**: Vivek Krishnamoorthy (Civil Engineer & Program Manager), Muhammed Jishad (QA / Civil Engineer)
+- **US Sales and Services (CONUS)**: Jeffery Bell (Senior Sales Manager), Eric Bach (Senior Sales Representative), Brandy Hardin (HR & Administration Manager)
 - **Global Sales and Services (OCONUS)**: Prakash Gopi (GM, Middle East Operations), Merna Almekkawi (Sales & Marketing Engineer)
-- **Domestic Sales and Services (CONUS)**: Jeffery Bell (Senior Sales Manager), Eric Bach (Senior Sales Representative), Brandy Hardin (HR & Administration Manager)
+- **Engineering**: Vivek Krishnamoorthy (Civil Engineer & Program Manager), Muhammed Jishad (QA / Civil Engineer)
 
 ## User Preferences
 
