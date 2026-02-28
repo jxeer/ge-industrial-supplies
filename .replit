@@ -37,3 +37,9 @@ author = "agent"
 task = "shell.exec"
 args = "npm run dev"
 waitForPort = 5000
+
+[env]
+GIT_AUTHOR_NAME = "jxeer"
+GIT_AUTHOR_EMAIL = "45716225+jxeer@users.noreply.github.com"
+GIT_COMMITTER_NAME = "jxeer"
+GIT_COMMITTER_EMAIL = "45716225+jxeer@users.noreply.github.com"
