@@ -2,7 +2,7 @@
  * ServicePage.tsx - Individual Service Detail Pages
  * 
  * Dynamic page component that renders detailed information for each
- * of the seven G&E service categories. Each service has its own:
+ * of the six G&E service categories. Each service has its own:
  * - Custom background image relevant to the service
  * - Service title and description
  * - Either a featured project OR list of core competencies
@@ -12,7 +12,7 @@
  * - /services/global-logistics
  * - /services/waste-management-environmental
  * - /services/construction-services
- * - /services/specialized-equipment
+ * - /services/industrial-supply-distribution
  * - /services/professional-solutions
  */
 
