@@ -29,11 +29,6 @@ This is a marketing website for G&E Industrial Supplies, Inc., a HUBZone-certifi
 - **Global Sales and Services (OCONUS)**: Prakash Gopi (GM, Middle East Operations), Merna Almekkawi (Sales & Marketing Engineer)
 - **Engineering**: Vivek Krishnamoorthy (Civil Engineer & Program Manager), Muhammed Jishad (QA / Civil Engineer)
 
-## User Preferences
-
-Preferred communication style: Simple, everyday language.
-Code style: Always include comments in code — comment sections, functions, logic, and key data structures for clarity and maintainability.
-
 ## System Architecture
 
 ### Frontend Architecture
