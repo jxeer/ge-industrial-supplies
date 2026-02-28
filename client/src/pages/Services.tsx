@@ -1,7 +1,7 @@
 /**
  * Services.tsx - Services Overview Page
  * 
- * Displays all seven G&E service categories in a grid layout.
+ * Displays all six G&E service categories in a grid layout.
  * Service terminology aligned with federal contracting standards.
  * 
  * Route: /services
@@ -12,14 +12,9 @@ import { Link } from "wouter";
 
 const services = [
   {
-    id: "facility-support",
-    title: "Facility Support",
-    description: "Comprehensive base ops and life support including plumbing, HVAC, technical inspections, and mechanical systems for military installations."
-  },
-  {
-    id: "operations-maintenance",
-    title: "Operations & Maintenance (O&M)",
-    description: "Recurring preventive and corrective maintenance programs for government and defense facilities, ensuring sustained operational readiness."
+    id: "base-facility-support",
+    title: "Base & Facility Support",
+    description: "Mission-critical installation and operations support enabling global DoD readiness through integrated facility management, reliability-centered maintenance, and comprehensive base operations."
   },
   {
     id: "global-logistics",

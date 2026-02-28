@@ -59,12 +59,11 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Core Services Column - List of 7 service areas */}
+          {/* Core Services Column - List of 6 service areas */}
           <div>
             <h3 className="text-white text-lg font-bold mb-6 font-display">Core Services</h3>
             <ul className="space-y-3 text-sm">
-              <li>Facility Support Services</li>
-              <li>Operations & Maintenance (O&M)</li>
+              <li>Base & Facility Support</li>
               <li>Global Logistics</li>
               <li>Waste Management & Environmental</li>
               <li>Construction Services</li>

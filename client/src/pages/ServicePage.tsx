@@ -8,8 +8,7 @@
  * - Either a featured project OR list of core competencies
  * 
  * Routes: /services/:serviceId
- * - /services/facility-support
- * - /services/operations-maintenance
+ * - /services/base-facility-support
  * - /services/global-logistics
  * - /services/waste-management-environmental
  * - /services/construction-services
@@ -49,28 +48,21 @@ interface ServiceData {
  * Service names aligned with federal contracting terminology.
  */
 const servicesData: Record<string, ServiceData> = {
-  "facility-support": {
-    id: "facility-support",
-    title: ["Facility", "Support"],
-    description: "A primary pillar of our business, specifically under the LOGCAP V contract. We provide comprehensive base ops and life support, including plumbing and HVAC, as well as technical inspections and mechanical systems maintenance for military installations.",
+  "base-facility-support": {
+    id: "base-facility-support",
+    title: ["Base & Facility", "Support"],
+    description: "G&E delivers mission-critical installation and operations support that directly enables global DoD readiness objectives. Through successful execution of numerous complex task orders under large prime contractors, G&E has demonstrated a consistent record of excellence, reliability, and superior performance ratings.\n\nOur team brings together in-house engineers, certified Construction Managers (CM), and experienced Program Managers (PM) who ensure disciplined execution, technical oversight, and seamless coordination across all operational functions.\n\nOur Reliability-Centered and Condition-Based Maintenance methodology ensures optimized asset performance while maintaining cost efficiency and compliance with DoD standards.",
     backgroundImage: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2000&auto=format&fit=crop",
-    project: {
-      title: "Base Ops and Life Support, Qatar and Kuwait (LOGCAP V)",
-      client: "Vectrus Systems Corporation",
-      value: "$23.4M",
-      details: "Multi-trade base support: inspections, repairs, HVAC, water and wastewater, custodial service, sanitation, equipment leasing, fuel facility support, and security and site infrastructure."
-    }
-  },
-  "operations-maintenance": {
-    id: "operations-maintenance",
-    title: ["Operations &", "Maintenance"],
-    description: "G&E delivers comprehensive Operations & Maintenance (O&M) programs to ensure sustained readiness at government and defense installations. Our O&M capabilities span preventive and corrective maintenance, systems monitoring, and lifecycle sustainment across critical infrastructure.",
-    backgroundImage: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=2000&auto=format&fit=crop",
     competencies: [
-      "Preventive & Corrective Maintenance: Scheduled and demand-based maintenance programs for mechanical, electrical, and plumbing systems ensuring uninterrupted facility operations.",
-      "Systems Monitoring & Controls: Real-time monitoring of HVAC, fire suppression, electrical distribution, and utility systems to maintain optimal performance.",
-      "Lifecycle Sustainment: Long-term maintenance planning and execution to extend the service life of critical infrastructure and reduce total cost of ownership.",
-      "Compliance & Reporting: Adherence to DoD, OSHA, and federal maintenance standards with detailed reporting, work order tracking, and quality assurance programs."
+      "Facilities Engineering & Management: Comprehensive facility management and engineering services for military installations and government facilities.",
+      "Operations & Maintenance (O&M) Services: Preventive and corrective maintenance programs ensuring sustained operational readiness across critical infrastructure.",
+      "Bulk & Retail Fuel / Water Distribution Support: Fuel facility support, water distribution, and utility management for base operations.",
+      "Airfield Operations & Ground Support: Ground support equipment maintenance, airfield operations, and aviation support services.",
+      "Food Service Operations & Logistics: Dining facility support, food service logistics, and nutrition program management.",
+      "Power Generation & Utilities Management: Generator operations, electrical distribution, and utilities infrastructure sustainment.",
+      "Emergency & Critical Response Services: Rapid response capabilities for facility emergencies, natural disasters, and mission-critical situations.",
+      "Transportation & Fleet Management: Vehicle fleet maintenance, transportation logistics, and motor pool operations.",
+      "Physical Security & Installation Support Services: Access control, perimeter security, and installation support operations."
     ]
   },
   "global-logistics": {

@@ -28,12 +28,11 @@ import melissaPhoto from "@assets/Melissa_Tate__1771271267643.jpg";
 
 /**
  * Core Capabilities List
- * 10 service areas displayed in the capabilities grid.
+ * 9 service areas displayed in the capabilities grid.
  * Aligned with federal contracting terminology.
  */
 const capabilities = [
-  "Facilities Engineering & Management",
-  "Operations & Maintenance (O&M) Services",
+  "Base & Facility Support",
   "Construction",
   "Waste Management & Environmental Services",
   "Bulk & Retail Fuel / Water Distribution Support",
