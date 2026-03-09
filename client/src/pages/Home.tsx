@@ -8,7 +8,7 @@
  * Sections:
  * - Hero: Full-screen background with tagline, CTA, and credentials
  * - Mission Support: Key mission outcomes grid
- * - Core Capabilities: 10-item grid of service areas
+ * - Core Capabilities: 14-item grid of service areas
  * - Contract Vehicles: Preview of active/pending contracts
  * - Executive Leadership: Photo preview of key leaders
  * - Footer: Shared site-wide footer component
@@ -28,7 +28,7 @@ import melissaPhoto from "@assets/Melissa_Tate__1771271267643.jpg";
 
 /**
  * Core Capabilities List
- * 9 service areas displayed in the capabilities grid.
+ * 14 service areas displayed in the capabilities grid.
  * Aligned with federal contracting terminology.
  */
 const capabilities = [
@@ -41,6 +41,11 @@ const capabilities = [
   "Emergency & Critical Response Services",
   "Transportation & Fleet Management",
   "Physical Security & Installation Support Services",
+  "Engineering Services",
+  "Charter Flight Services",
+  "Security Services",
+  "Emergency Response",
+  "Operational Support",
 ];
 
 /**

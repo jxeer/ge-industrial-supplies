@@ -8,6 +8,7 @@
 - **Contact Email**: info@geindustrialsupplies.com
 - **GSA Schedule Status**: Pending (not Active)
 - **Middle East contracts**: Attributed to Vectrus Systems Corporation as prime
+- **Services**: 11 service categories (Base & Facility Support, Global Logistics, Waste Management & Environmental, Construction, Industrial Supply & Distribution, Professional Solutions, Engineering Services, Charter Flight Services, Security Services, Emergency Response, Operational Support)
 
 ## Leadership Team (12 members, 5 sections)
 - **Executive Leadership**: Ajith K. Nair (President & COO), John Paul (VP Global Sales), David Banks (VP Mission Operations)

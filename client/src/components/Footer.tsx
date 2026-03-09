@@ -5,7 +5,7 @@
  * Contains four columns:
  * - Brand: Company logo, description, HUBZone badge
  * - Quick Links: Navigation links to main pages
- * - Core Services: List of 7 service areas
+ * - Core Services: List of 11 service areas
  * - Contact Info: Address, email, phone, and company identifiers
  *
  * Also includes a bottom bar with copyright notice.
@@ -59,7 +59,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Core Services Column - List of 6 service areas */}
+          {/* Core Services Column - List of 11 service areas */}
           <div>
             <h3 className="text-white text-lg font-bold mb-6 font-display">Core Services</h3>
             <ul className="space-y-3 text-sm">
@@ -69,6 +69,11 @@ export function Footer() {
               <li>Construction Services</li>
               <li>Industrial Supply & Distribution</li>
               <li>Professional Solutions</li>
+              <li>Engineering Services</li>
+              <li>Charter Flight Services</li>
+              <li>Security Services</li>
+              <li>Emergency Response</li>
+              <li>Operational Support</li>
             </ul>
           </div>
 

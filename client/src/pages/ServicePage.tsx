@@ -2,7 +2,7 @@
  * ServicePage.tsx - Individual Service Detail Pages
  * 
  * Dynamic page component that renders detailed information for each
- * of the six G&E service categories. Each service has its own:
+ * of the eleven G&E service categories. Each service has its own:
  * - Custom background image relevant to the service
  * - Service title and description
  * - Either a featured project OR list of core competencies
@@ -14,6 +14,11 @@
  * - /services/construction-services
  * - /services/industrial-supply-distribution
  * - /services/professional-solutions
+ * - /services/engineering-services
+ * - /services/charter-flight-services
+ * - /services/security-services
+ * - /services/emergency-response
+ * - /services/operational-support
  */
 
 import { motion } from "framer-motion";
@@ -41,7 +46,7 @@ interface ServiceData {
 /**
  * Services Data
  * 
- * Static content for all seven service pages. Each entry contains
+ * Static content for all eleven service pages. Each entry contains
  * the service information, relevant background imagery, and either
  * a featured project or list of core competencies.
  * 
@@ -125,6 +130,72 @@ const servicesData: Record<string, ServiceData> = {
       "Leadership & Management: Delivery of experienced managerial and supervisory teams with a 30+ year reputation for reliability and responsive service.",
       "Strategic Staffing: Scalable human resource solutions designed to meet the technical requirements of large-scale federal task orders.",
       "International Expertise: Staffing solutions backed by JCCS approval and experience managing 40+ task orders under LOGCAP."
+    ]
+  },
+  "engineering-services": {
+    id: "engineering-services",
+    title: ["Engineering", "Services"],
+    description: "G&E delivers comprehensive engineering solutions spanning civil, mechanical, and electrical disciplines. Our in-house engineering team provides program management, design oversight, quality assurance, and construction supervision for federal infrastructure and defense projects worldwide.",
+    backgroundImage: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2000&auto=format&fit=crop",
+    competencies: [
+      "Civil Engineering: Site development, structural analysis, infrastructure design, and construction oversight for military and government installations.",
+      "Program Management: End-to-end project lifecycle management including planning, scheduling, cost control, and stakeholder coordination.",
+      "Quality Assurance & Control: Rigorous QA/QC programs ensuring compliance with federal standards, specifications, and safety requirements.",
+      "Construction Supervision: On-site engineering oversight for civil and electrical construction ensuring total project compliance and quality delivery.",
+      "Design & Technical Review: Engineering analysis, design review, and technical documentation to support facility modernization and sustainment projects."
+    ]
+  },
+  "charter-flight-services": {
+    id: "charter-flight-services",
+    title: ["Charter Flight", "Services"],
+    description: "G&E provides reliable aircraft and support services to move people and supplies across remote and challenging environments. Our charter flight operations support humanitarian missions, defense logistics, and emergency response with ICAO and UN-compliant aviation services.",
+    backgroundImage: "https://images.unsplash.com/photo-1436491865332-7a61a109db05?q=80&w=2000&auto=format&fit=crop",
+    competencies: [
+      "Scheduled Flights: Regular rotations between operational hubs supporting sustained mission logistics and personnel movement.",
+      "Ad-hoc Charters: Flexible flight services for specific mission needs, time-sensitive cargo, and VIP transport requirements.",
+      "MEDEVAC & Rapid Response: Emergency medical evacuation missions with stretcher-equipped aircraft and medical support capabilities.",
+      "Remote Access Operations: Bush flying operations from short, unpaved, or basic airstrips with minimal ground infrastructure in hot and high-altitude areas.",
+      "Passenger & Cargo Handling: Complete ground handling including check-ins, manifests, safety briefings, weight/balance calculations, and logistics coordination.",
+      "Compliance & Safety: Full adherence to ICAO and UN Aviation Safety standards with a strict Safety Management System (SMS) and continuous flight tracking."
+    ]
+  },
+  "security-services": {
+    id: "security-services",
+    title: ["Security", "Services"],
+    description: "G&E provides integrated physical security solutions for military installations, government facilities, and critical infrastructure. Our security services encompass access control, surveillance, force protection, and installation security operations tailored to DoD and federal requirements.",
+    backgroundImage: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=2000&auto=format&fit=crop",
+    competencies: [
+      "Physical Security & Access Control: Perimeter security, entry control points, badge verification, and visitor management for secure installations.",
+      "Surveillance & Monitoring: CCTV operations, intrusion detection systems, and 24/7 security monitoring for critical facilities.",
+      "Force Protection: Threat assessment, vulnerability analysis, and protective security measures aligned with DoD force protection standards.",
+      "Installation Security Operations: Guard services, patrol operations, and security response teams for military and government installations.",
+      "Security Planning & Compliance: Development of security plans, risk assessments, and standard operating procedures compliant with federal security directives."
+    ]
+  },
+  "emergency-response": {
+    id: "emergency-response",
+    title: ["Emergency", "Response"],
+    description: "G&E delivers rapid-deployment emergency management and disaster response capabilities. Our teams are trained and equipped to provide crisis coordination, damage assessment, continuity of operations support, and emergency facility services for federal and defense clients.",
+    backgroundImage: "https://images.unsplash.com/photo-1599059813005-11265ba4b4ce?q=80&w=2000&auto=format&fit=crop",
+    competencies: [
+      "Crisis Coordination: Rapid mobilization and coordination of emergency response teams for natural disasters, facility emergencies, and mission-critical situations.",
+      "Damage Assessment: Post-incident structural and infrastructure assessments to determine repair priorities and restoration requirements.",
+      "Continuity of Operations (COOP): Planning and execution of continuity measures to maintain essential functions during and after emergency events.",
+      "Emergency Facility Services: Temporary power generation, water supply, debris removal, and emergency shelter support for affected installations.",
+      "Disaster Recovery Support: Restoration of critical infrastructure, utility systems, and operational facilities following emergency events."
+    ]
+  },
+  "operational-support": {
+    id: "operational-support",
+    title: ["Operational", "Support"],
+    description: "G&E provides expanded mission support services that sustain and enhance operational readiness across military installations and government facilities. Our operational support covers communications, IT infrastructure, fleet management, and administrative functions critical to day-to-day mission success.",
+    backgroundImage: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2000&auto=format&fit=crop",
+    competencies: [
+      "Communications Support: Installation and maintenance of communication systems, radio networks, and mission-critical connectivity infrastructure.",
+      "IT Infrastructure: Network management, systems administration, and technology support services for secure government and defense operations.",
+      "Vehicle Fleet Management: Comprehensive fleet maintenance, motor pool operations, and transportation logistics for installation vehicle assets.",
+      "Administrative Operations: Office management, document control, records management, and administrative support services for program offices.",
+      "Training & Readiness Support: Facility preparation, range operations support, and logistics coordination for training exercises and readiness activities."
     ]
   }
 };

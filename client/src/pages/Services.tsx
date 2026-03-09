@@ -1,7 +1,7 @@
 /**
  * Services.tsx - Services Overview Page
  * 
- * Displays all six G&E service categories in a grid layout.
+ * Displays all eleven G&E service categories in a grid layout.
  * Service terminology aligned with federal contracting standards.
  * 
  * Route: /services
@@ -40,6 +40,31 @@ const services = [
     id: "professional-solutions",
     title: "Professional Solutions",
     description: "Mission-critical technical manpower and HR solutions for government and private-sector partners."
+  },
+  {
+    id: "engineering-services",
+    title: "Engineering Services",
+    description: "Comprehensive civil, mechanical, and electrical engineering solutions supporting infrastructure development, program management, and quality assurance for federal and defense projects."
+  },
+  {
+    id: "charter-flight-services",
+    title: "Charter Flight Services",
+    description: "Reliable aircraft and crew services for scheduled rotations, ad-hoc charters, MEDEVAC, and remote access operations in challenging humanitarian and defense environments."
+  },
+  {
+    id: "security-services",
+    title: "Security Services",
+    description: "Integrated physical security, access control, surveillance, and force protection solutions for military installations and government facilities worldwide."
+  },
+  {
+    id: "emergency-response",
+    title: "Emergency Response",
+    description: "Rapid-deployment emergency management and disaster response capabilities including crisis coordination, damage assessment, and continuity of operations support."
+  },
+  {
+    id: "operational-support",
+    title: "Operational Support",
+    description: "Expanded mission support services including communications, IT infrastructure, vehicle fleet management, and administrative operations for sustained readiness."
   }
 ];
 
